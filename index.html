@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAZAFINDRAKOTO Santatriniaina - Portfolio Développeur Full Stack</title>
+    <meta name="description" content="Portfolio de RAZAFINDRAKOTO Santatriniaina, Développeur Full Stack & Architecte de Solutions Digitales">
+    <meta name="keywords" content="développeur full stack, JavaScript, React, Node.js, portfolio, développement web, Madagascar">
+    <meta name="author" content="RAZAFINDRAKOTO Santatriniaina">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand futuristic-text" href="#accueil">
+                <span class="glow">R</span>AZAFINDRAKOTO
+            </a>
+            <div class="d-flex align-items-center d-lg-none">
+                <div class="theme-switcher-mobile me-3">
+                    <input type="checkbox" id="theme-toggle-mobile" class="theme-checkbox">
+                    <label for="theme-toggle-mobile" class="theme-label theme-label-vertical">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <div class="theme-ball"></div>
+                    </label>
+                </div>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span class="toggler-bar toggler-bar-1"></span>
+                        <span class="toggler-bar toggler-bar-2"></span>
+                        <span class="toggler-bar toggler-bar-3"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-switcher d-none d-lg-flex ms-4">
+                    <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+                    <label for="theme-toggle" class="theme-label theme-label-vertical">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                        <div class="theme-ball"></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="hero-section">
+        <div class="hero-background">
+            <div class="floating-shapes"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">DÉVELOPPEUR INNOVANT</div>
+                    <h1 class="hero-title">
+                        <span class="text-gradient">RAZAFINDRAKOTO</span>
+                        <span class="hero-firstname">Santatriniaina</span>
+                    </h1>
+                    <p class="hero-subtitle">Développeur Full Stack & Architecte de Solutions Digitales</p>
+                    <p class="hero-description">Je transforme des concepts complexes en expériences digitales exceptionnelles grâce à des technologies de pointe et une approche innovante.</p>
+                    <div class="hero-actions">
+                        <a href="#portfolio" class="btn btn-primary btn-glow">Explorer mes projets</a>
+                        <a href="#contact" class="btn btn-outline">Me contacter</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number" data-count="42">0</div>
+                            <div class="stat-label">Projets réalisés</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Années d'expérience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" data-count="36">0</div>
+                            <div class="stat-label">Clients satisfaits</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-avatar-container">
+                        <div class="hero-avatar">
+                            <img src="assets/images/profil.jpg" alt="RAZAFINDRAKOTO Santatriniaina - Développeur Full Stack" class="avatar-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDM1MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNTAiIGhlaWdodD0iMzUwIiBmaWxsPSIjNkM2M0ZGIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8cGF0aCBkPSJNMTc1IDExMEMxOTMuMzc3IDExMCAyMDggOTUuMzc3MiAyMDggNzdDMjA4IDU4LjYyMjggMTkzLjM3NyA0NCAxNzUgNDRDMTU2LjYyMyA0NCAxNDIgNTguNjIyOCAxNDIgNzdDMTQyIDk1LjM3NzIgMTU2LjYyMyAxMTAgMTc1IDExMFoiIGZpbGw9IiM2QzYzRkYiLz4KPHBhdGggZD0iTTE0MiAxNTRDMTA3LjY0MiAxNTQgODAgMTgxLjY0MiA4MCAyMTZWMTU0SDE0MloiIGZpbGw9IiM2QzYzRkYiLz4KPHBhdGggZD0iTTI3MCAxNTRWMjE2QzI3MCAxODEuNjQyIDI0Mi4zNTggMTU0IDIwOCAxNTRIMjcwWiIgZmlsbD0iIzZDNjNGRiIvPgo8L3N2Zz4K'">
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fab fa-js-square"></i></div>
+                            <div class="tech-icon"><i class="fab fa-react"></i></div>
+                            <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+                            <div class="tech-icon"><i class="fab fa-python"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Défiler</span>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">
+                        <span class="section-number">01</span>
+                        À propos de moi
+                    </h2>
+                    <p class="about-text">Je suis un développeur full stack passionné par la création de solutions digitales innovantes. Avec plus de 5 ans d'expérience, je combine expertise technique et créativité pour transformer des idées complexes en produits fonctionnels et élégants.</p>
+                    <p class="about-text">Mon approche allie rigueur technique et sens esthétique pour créer des expériences utilisateur mémorables et des architectures robustes.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Innovation Technologique</h4>
+                                <p>Adoption des dernières technologies et méthodologies de développement</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Résolution de Problèmes</h4>
+                                <p>Approche analytique pour résoudre des défis techniques complexes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-visual">
+                        <div class="floating-tech-cards">
+                            <div class="floating-card card-1">
+                                <i class="fab fa-js-square"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fab fa-node-js"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="floating-card card-4">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                        </div>
+                        <div class="code-snippet-container">
+                            <div class="code-snippet">
+                                <div class="code-header">
+                                    <div class="code-dots">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <span class="code-title">profile.js</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>const developer = {
+  name: "RAZAFINDRAKOTO Santatriniaina",
+  role: "Développeur Full Stack",
+  focus: "Créer des solutions digitales innovantes",
+  skills: ["JavaScript", "React", "Node.js", "Python"],
+  philosophy: "Transformer des idées en réalité"
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="section-number">02</span>
+                Mes Compétences
+            </h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Développement Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="95">
+                                <div class="skill-info">
+                                    <span class="skill-name">React.js</span>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">Vue.js</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">TypeScript</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="88">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML/CSS</span>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Développement Backend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item" data-skill="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python/Django</span>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">Base de données</span>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="82">
+                                <div class="skill-info">
+                                    <span class="skill-name">API REST</span>
+                                    <span class="skill-percentage">82%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title text-center">Outils & Technologies</h3>
+                        <div class="tools-grid">
+                            <div class="tool-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-aws"></i>
+                                <span>AWS</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-server"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-database"></i>
+                                <span>SQL Server</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-desktop"></i>
+                                <span>Azure Data Studio</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-figma"></i>
+                                <span>Figma</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-ubuntu"></i>
+                                <span>Ubuntu</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-windows"></i>
+                                <span>Windows</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-code"></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fab fa-canva"></i>
+                                <span>Canva</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-cube"></i>
+                                <span>Blender</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-palette"></i>
+                                <span>Adobe Photoshop</span>
+                            </div>
+                            <div class="tool-item">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>Adobe Illustrator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Portfolio avec Carrousel amélioré -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="section-number">03</span>
+                Mes Réalisations
+            </h2>
+            <div class="portfolio-header text-center mb-5">
+                <p class="portfolio-subtitle">Découvrez une sélection de mes projets les plus significatifs</p>
+            </div>
+
+            <!-- Carrousel Portfolio amélioré -->
+            <div class="portfolio-carousel">
+                <div class="carousel-container">
+                    <!-- Boutons de navigation flottants -->
+                    <button class="carousel-btn carousel-prev floating-nav-btn" aria-label="Projets précédents">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next floating-nav-btn" aria-label="Projets suivants">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slide 1 - Projet 1 -->
+                        <div class="carousel-slide">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="portfolio-card">
+                                        <div class="portfolio-image">
+                                            <div class="portfolio-img-placeholder web-bg">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                <span>Application E-commerce</span>
+                                            </div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-actions">
+                                                    <a href="https://votre-projet-ecommerce.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                    </a>
+                                                    <a href="https://github.com/votre-profil/projet-ecommerce" class="portfolio-action-btn" aria-label="Code source" target="_blank">
+                                                        <i class="fas fa-code"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h3 class="portfolio-title">Plateforme E-commerce</h3>
+                                            <p class="portfolio-description">Solution complète de vente en ligne avec système de paiement sécurisé, gestion d'inventaire et analytics avancés.</p>
+                                            <div class="portfolio-features">
+                                                <span class="feature">React</span>
+                                                <span class="feature">Node.js</span>
+                                                <span class="feature">MongoDB</span>
+                                                <span class="feature">Stripe</span>
+                                            </div>
+                                            <div class="portfolio-footer">
+                                                <span class="portfolio-date">2023</span>
+                                                <a href="https://votre-projet-ecommerce.com" class="portfolio-link" target="_blank">
+                                                    Voir le projet <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 - Projet 2 -->
+                        <div class="carousel-slide">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="portfolio-card">
+                                        <div class="portfolio-image">
+                                            <div class="portfolio-img-placeholder web-bg">
+                                                <i class="fas fa-blog"></i>
+                                                <span>Blog Technologique</span>
+                                            </div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-actions">
+                                                    <a href="https://votre-projet-blog.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                    </a>
+                                                    <a href="https://github.com/votre-profil/projet-blog" class="portfolio-action-btn" aria-label="Code source" target="_blank">
+                                                        <i class="fas fa-code"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h3 class="portfolio-title">Blog Technologique</h3>
+                                            <p class="portfolio-description">Plateforme de blog moderne avec système de gestion de contenu, commentaires et analytics intégrés.</p>
+                                            <div class="portfolio-features">
+                                                <span class="feature">Next.js</span>
+                                                <span class="feature">GraphQL</span>
+                                                <span class="feature">PostgreSQL</span>
+                                                <span class="feature">Prisma</span>
+                                            </div>
+                                            <div class="portfolio-footer">
+                                                <span class="portfolio-date">2023</span>
+                                                <a href="https://votre-projet-blog.com" class="portfolio-link" target="_blank">
+                                                    Voir le projet <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 - Projet 3 -->
+                        <div class="carousel-slide">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="portfolio-card">
+                                        <div class="portfolio-image">
+                                            <div class="portfolio-img-placeholder mobile-bg">
+                                                <i class="fas fa-tasks"></i>
+                                                <span>Application Mobile</span>
+                                            </div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-actions">
+                                                    <a href="https://votre-projet-mobile.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                    </a>
+                                                    <a href="https://github.com/votre-profil/projet-mobile" class="portfolio-action-btn" aria-label="Code source" target="_blank">
+                                                        <i class="fas fa-code"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h3 class="portfolio-title">App de Productivité</h3>
+                                            <p class="portfolio-description">Application cross-platform pour la gestion de tâches, collaboration d'équipe et suivi de projets en temps réel.</p>
+                                            <div class="portfolio-features">
+                                                <span class="feature">React Native</span>
+                                                <span class="feature">Firebase</span>
+                                                <span class="feature">Redux</span>
+                                                <span class="feature">Push Notifications</span>
+                                            </div>
+                                            <div class="portfolio-footer">
+                                                <span class="portfolio-date">2023</span>
+                                                <a href="https://votre-projet-mobile.com" class="portfolio-link" target="_blank">
+                                                    Voir le projet <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 - Projet 4 -->
+                        <div class="carousel-slide">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="portfolio-card">
+                                        <div class="portfolio-image">
+                                            <div class="portfolio-img-placeholder mobile-bg">
+                                                <i class="fas fa-heartbeat"></i>
+                                                <span>Application Santé</span>
+                                            </div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-actions">
+                                                    <a href="https://votre-projet-sante.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                    </a>
+                                                    <a href="https://github.com/votre-profil/projet-sante" class="portfolio-action-btn" aria-label="Code source" target="_blank">
+                                                        <i class="fas fa-code"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h3 class="portfolio-title">App de Suivi Santé</h3>
+                                            <p class="portfolio-description">Application mobile pour le suivi des activités physiques, nutrition et bien-être avec synchronisation des wearables.</p>
+                                            <div class="portfolio-features">
+                                                <span class="feature">Flutter</span>
+                                                <span class="feature">Node.js</span>
+                                                <span class="feature">MongoDB</span>
+                                                <span class="feature">API Santé</span>
+                                            </div>
+                                            <div class="portfolio-footer">
+                                                <span class="portfolio-date">2023</span>
+                                                <a href="https://votre-projet-sante.com" class="portfolio-link" target="_blank">
+                                                    Voir le projet <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 - Projet 5 -->
+                        <div class="carousel-slide">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="portfolio-card">
+                                        <div class="portfolio-image">
+                                            <div class="portfolio-img-placeholder ai-bg">
+                                                <i class="fas fa-robot"></i>
+                                                <span>Système IA</span>
+                                            </div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-actions">
+                                                    <a href="https://votre-projet-ia.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                    </a>
+                                                    <a href="https://github.com/votre-profil/projet-ia" class="portfolio-action-btn" aria-label="Code source" target="_blank">
+                                                        <i class="fas fa-code"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h3 class="portfolio-title">Système de Recommandation IA</h3>
+                                            <p class="portfolio-description">Algorithme d'intelligence artificielle pour la recommandation personnalisée de contenu avec apprentissage automatique.</p>
+                                            <div class="portfolio-features">
+                                                <span class="feature">Python</span>
+                                                <span class="feature">TensorFlow</span>
+                                                <span class="feature">Flask</span>
+                                                <span class="feature">Machine Learning</span>
+                                            </div>
+                                            <div class="portfolio-footer">
+                                                <span class="portfolio-date">2023</span>
+                                                <a href="https://votre-projet-ia.com" class="portfolio-link" target="_blank">
+                                                    Voir le projet <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 - Projet 6 -->
+                        <div class="carousel-slide">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <div class="portfolio-card">
+                                        <div class="portfolio-image">
+                                            <div class="portfolio-img-placeholder ai-bg">
+                                                <i class="fas fa-chart-line"></i>
+                                                <span>Analyse Prédictive</span>
+                                            </div>
+                                            <div class="portfolio-overlay">
+                                                <div class="portfolio-actions">
+                                                    <a href="https://votre-projet-analyse.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                    </a>
+                                                    <a href="https://github.com/votre-profil/projet-analyse" class="portfolio-action-btn" aria-label="Code source" target="_blank">
+                                                        <i class="fas fa-code"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="portfolio-content">
+                                            <h3 class="portfolio-title">Système d'Analyse Prédictive</h3>
+                                            <p class="portfolio-description">Plateforme d'analyse de données et prédictions business avec tableaux de bord interactifs et rapports automatisés.</p>
+                                            <div class="portfolio-features">
+                                                <span class="feature">Python</span>
+                                                <span class="feature">Scikit-learn</span>
+                                                <span class="feature">FastAPI</span>
+                                                <span class="feature">Power BI</span>
+                                            </div>
+                                            <div class="portfolio-footer">
+                                                <span class="portfolio-date">2023</span>
+                                                <a href="https://votre-projet-analyse.com" class="portfolio-link" target="_blank">
+                                                    Voir le projet <i class="fas fa-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Indicateurs du carrousel -->
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
+                    <span class="indicator" data-slide="5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="section-number">04</span>
+                Mes Services
+            </h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Développement Web</h4>
+                        <p>Création d'applications web modernes, réactives et performantes avec les dernières technologies.</p>
+                        <ul class="service-features">
+                            <li>Applications Single Page</li>
+                            <li>Architecture Microservices</li>
+                            <li>Intégration d'APIs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Applications Mobiles</h4>
+                        <p>Développement d'applications mobiles natives et hybrides pour iOS et Android.</p>
+                        <ul class="service-features">
+                            <li>Applications Cross-Platform</li>
+                            <li>UI/UX Optimisée</li>
+                            <li>Performance Maximale</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Solutions IA</h4>
+                        <p>Intégration d'intelligence artificielle et de machine learning dans vos applications.</p>
+                        <ul class="service-features">
+                            <li>Algorithmes Personnalisés</li>
+                            <li>Analyse de Données</li>
+                            <li>Automatisation Intelligente</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title text-center">
+                <span class="section-number">05</span>
+                Contactez-moi
+            </h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="contact-info">
+                                    <h3>Travaillons ensemble</h3>
+                                    <p>Discutons de votre projet et transformons vos idées en réalité.</p>
+                                    <div class="contact-details">
+                                        <div class="contact-item">
+                                            <i class="fas fa-envelope"></i>
+                                            <span>santatriniaina@email.com</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-phone"></i>
+                                            <span>+261 34 00 000 00</span>
+                                        </div>
+                                        <div class="contact-item">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            <span>Antananarivo, Madagascar</span>
+                                        </div>
+                                    </div>
+                                    <div class="social-links">
+                                        <a href="#" class="social-link" aria-label="Profil LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" class="social-link" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
+                                        <a href="#" class="social-link" aria-label="Profil Twitter"><i class="fab fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <form class="contact-form" id="contactForm">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Votre nom" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Votre email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Sujet" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="4" placeholder="Votre message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Envoyer le message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h4 class="futuristic-text">RAZAFINDRAKOTO Santatriniaina</h4>
+                    <p>Développeur Full Stack & Architecte de Solutions Digitales</p>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 RAZAFINDRAKOTO Santatriniaina. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <a href="#" class="back-to-top" aria-label="Retour en haut de la page">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
