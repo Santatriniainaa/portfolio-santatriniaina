@@ -1,801 +1,646 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
+    <!-- Critical meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAZAFINDRAKOTO Santatriniaina - Portfolio Développeur Full Stack</title>
-    <meta name="description" content="Portfolio de RAZAFINDRAKOTO Santatriniaina, Développeur Full Stack & Architecte de Solutions Digitales">
-    <meta name="keywords" content="développeur full stack, JavaScript, React, Node.js, portfolio, développement web, Madagascar">
+
+    <!-- Document identity & SEO -->
+    <title>RAZAFINDRAKOTO Santatriniaina — Ingénieur électronique &amp; Full Stack</title>
+    <meta name="description" content="Portfolio de RAZAFINDRAKOTO Santatriniaina — Ingénieur électronique &amp; développeur Full Stack à Antananarivo, Madagascar. Systèmes IoT, applications web, DevOps.">
     <meta name="author" content="RAZAFINDRAKOTO Santatriniaina">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Resource hints — placed before the resources they accelerate -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Render-blocking resources -->
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Open Graph (LinkedIn, Facebook…) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="RAZAFINDRAKOTO Santatriniaina — Ingénieur électronique &amp; Full Stack">
+    <meta property="og:description" content="Systèmes IoT, applications web Angular / Spring Boot, DevOps Linux / Cloud.">
+    <meta property="og:image" content="assets/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="RAZAFINDRAKOTO Santatriniaina — Ingénieur électronique &amp; Développeur Full Stack">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RAZAFINDRAKOTO Santatriniaina — Ingénieur électronique &amp; Full Stack">
+    <meta name="twitter:description" content="Systèmes IoT, applications web Angular / Spring Boot, DevOps Linux / Cloud.">
+    <meta name="twitter:image" content="assets/images/og-image.png">
+
+    <!-- Structured data (Schema.org / Person) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "RAZAFINDRAKOTO Santatriniaina",
+        "givenName": "Santatriniaina",
+        "familyName": "RAZAFINDRAKOTO",
+        "jobTitle": "Ingénieur électronique & Développeur Full Stack",
+        "description": "Ingénieur électronique et développeur full stack basé à Antananarivo, Madagascar. Spécialisé en systèmes IoT, applications web (Angular, Spring Boot, FastAPI) et DevOps (Docker, Linux).",
+        "email": "mailto:santatriniainaraz080@gmail.com",
+        "telephone": "+261346395306",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Antananarivo",
+            "addressCountry": "MG"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "École Supérieure Polytechnique d'Antananarivo (ESPA)"
+        },
+        "knowsAbout": [
+            "Électronique embarquée",
+            "Internet des objets (IoT)",
+            "Java Spring Boot",
+            "Python FastAPI",
+            "Angular",
+            "TypeScript",
+            "Docker",
+            "Linux",
+            "DevOps",
+            "Microcontrôleurs",
+            "ESP32",
+            "Arduino",
+            "Raspberry Pi"
+        ],
+        "knowsLanguage": ["fr", "mg", "en"],
+        "sameAs": [
+            "https://github.com/Santatriniainaa",
+            "https://www.facebook.com/santatra.ny.aina.589892/"
+        ]
+    }
+    </script>
 </head>
-<body data-theme="light">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand futuristic-text" href="#accueil">
-                <span class="glow">R</span>AZAFINDRAKOTO
+<body>
+    <!-- Skip link (a11y) -->
+    <a href="#main" class="skip-link">Aller au contenu</a>
+
+    <!-- Sticky header : brand + nav + language/theme/menu toggles -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="#accueil">
+                <span class="brand-mark">R</span>
+                <span class="brand-name">Santatriniaina</span>
             </a>
-            <div class="d-flex align-items-center d-lg-none">
-                <div class="theme-switcher-mobile me-3">
-                    <input type="checkbox" id="theme-toggle-mobile" class="theme-checkbox">
-                    <label for="theme-toggle-mobile" class="theme-label theme-label-vertical">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                        <div class="theme-ball"></div>
-                    </label>
-                </div>
-                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">
-                        <span class="toggler-bar toggler-bar-1"></span>
-                        <span class="toggler-bar toggler-bar-2"></span>
-                        <span class="toggler-bar toggler-bar-3"></span>
-                    </span>
+
+            <nav class="nav-links" aria-label="Navigation principale">
+                <a href="#apropos" data-i18n="nav.about">À propos</a>
+                <a href="#stack" data-i18n="nav.stack">Stack</a>
+                <a href="#projets" data-i18n="nav.projects">Projets</a>
+                <a href="#formation" data-i18n="nav.background">Parcours</a>
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Changer de langue" aria-pressed="false">
+                    <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12 15.3 15.3 0 0 1 12 2z"/></svg>
+                    <span class="lang-label">FR</span>
+                </button>
+                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème">
+                    <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
                 </button>
             </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                <div class="theme-switcher d-none d-lg-flex ms-4">
-                    <input type="checkbox" id="theme-toggle" class="theme-checkbox">
-                    <label for="theme-toggle" class="theme-label theme-label-vertical">
-                        <i class="fas fa-sun"></i>
-                        <i class="fas fa-moon"></i>
-                        <div class="theme-ball"></div>
-                    </label>
-                </div>
-            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Section Hero -->
-    <section id="accueil" class="hero-section">
-        <div class="hero-background">
-            <div class="floating-shapes"></div>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content">
-                    <div class="hero-badge">DÉVELOPPEUR INNOVANT</div>
-                    <h1 class="hero-title">
-                        <span class="text-gradient">RAZAFINDRAKOTO</span>
-                        <span class="hero-firstname">Santatriniaina</span>
-                    </h1>
-                    <p class="hero-subtitle">Développeur Full Stack & Architecte de Solutions Digitales</p>
-                    <p class="hero-description">Je transforme des concepts complexes en expériences digitales exceptionnelles grâce à des technologies de pointe et une approche innovante.</p>
-                    <div class="hero-actions">
-                        <a href="#portfolio" class="btn btn-primary btn-glow">Explorer mes projets</a>
-                        <a href="#contact" class="btn btn-outline">Me contacter</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number" data-count="42">0</div>
-                            <div class="stat-label">Projets réalisés</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number" data-count="5">0</div>
-                            <div class="stat-label">Années d'expérience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number" data-count="36">0</div>
-                            <div class="stat-label">Clients satisfaits</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="hero-avatar-container">
-                        <div class="hero-avatar">
-                            <img src="assets/images/profil.jpg" alt="RAZAFINDRAKOTO Santatriniaina - Développeur Full Stack" class="avatar-img" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDM1MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNTAiIGhlaWdodD0iMzUwIiBmaWxsPSIjNkM2M0ZGIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8cGF0aCBkPSJNMTc1IDExMEMxOTMuMzc3IDExMCAyMDggOTUuMzc3MiAyMDggNzdDMjA4IDU4LjYyMjggMTkzLjM3NyA0NCAxNzUgNDRDMTU2LjYyMyA0NCAxNDIgNTguNjIyOCAxNDIgNzdDMTQyIDk1LjM3NzIgMTU2LjYyMyAxMTAgMTc1IDExMFoiIGZpbGw9IiM2QzYzRkYiLz4KPHBhdGggZD0iTTE0MiAxNTRDMTA3LjY0MiAxNTQgODAgMTgxLjY0MiA4MCAyMTZWMTU0SDE0MloiIGZpbGw9IiM2QzYzRkYiLz4KPHBhdGggZD0iTTI3MCAxNTRWMjE2QzI3MCAxODEuNjQyIDI0Mi4zNTggMTU0IDIwOCAxNTRIMjcwWiIgZmlsbD0iIzZDNjNGRiIvPgo8L3N2Zz4K'">
-                            <div class="avatar-glow"></div>
-                        </div>
-                        <div class="tech-icons">
-                            <div class="tech-icon"><i class="fab fa-js-square"></i></div>
-                            <div class="tech-icon"><i class="fab fa-react"></i></div>
-                            <div class="tech-icon"><i class="fab fa-node-js"></i></div>
-                            <div class="tech-icon"><i class="fab fa-python"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-line"></div>
-            <span>Défiler</span>
-        </div>
-    </section>
+    <main id="main">
+        <!-- Hero : intro + portrait + scroll cue -->
+        <section id="accueil" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <p class="eyebrow" data-i18n="hero.eyebrow">Antananarivo, Madagascar — disponible</p>
+                        <h1>RAZAFINDRAKOTO<br><span class="hero-firstname">Santatriniaina</span></h1>
+                        <p class="hero-role" data-i18n="hero.role">Étudiant ingénieur en électronique <span class="hero-role-sep">·</span> Développeur full stack</p>
+                        <p class="lede" data-i18n="hero.lede">Je conçois des systèmes IoT et des applications web, de la carte au cloud. Actuellement en Master à l'ESPA (Antananarivo).</p>
 
-    <!-- Section À propos -->
-    <section id="apropos" class="about-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="section-title">
-                        <span class="section-number">01</span>
-                        À propos de moi
-                    </h2>
-                    <p class="about-text">Je suis un développeur full stack passionné par la création de solutions digitales innovantes. Avec plus de 5 ans d'expérience, je combine expertise technique et créativité pour transformer des idées complexes en produits fonctionnels et élégants.</p>
-                    <p class="about-text">Mon approche allie rigueur technique et sens esthétique pour créer des expériences utilisateur mémorables et des architectures robustes.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="highlight-content">
-                                <h4>Innovation Technologique</h4>
-                                <p>Adoption des dernières technologies et méthodologies de développement</p>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-icon">
-                                <i class="fas fa-puzzle-piece"></i>
-                            </div>
-                            <div class="highlight-content">
-                                <h4>Résolution de Problèmes</h4>
-                                <p>Approche analytique pour résoudre des défis techniques complexes</p>
-                            </div>
+                        <div class="hero-actions">
+                            <a href="assets/cv-santatriniaina.pdf" class="btn btn-primary" download>
+                                <i data-lucide="download" aria-hidden="true"></i>
+                                <span data-i18n="hero.downloadCv">Télécharger mon CV</span>
+                            </a>
+                            <a href="#contact" class="btn btn-ghost" data-i18n="hero.contactMe">Me contacter</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-visual">
-                        <div class="floating-tech-cards">
-                            <div class="floating-card card-1">
-                                <i class="fab fa-js-square"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="floating-card card-2">
-                                <i class="fab fa-react"></i>
-                                <span>React</span>
-                            </div>
-                            <div class="floating-card card-3">
-                                <i class="fab fa-node-js"></i>
-                                <span>Node.js</span>
-                            </div>
-                            <div class="floating-card card-4">
-                                <i class="fab fa-python"></i>
-                                <span>Python</span>
-                            </div>
-                        </div>
-                        <div class="code-snippet-container">
-                            <div class="code-snippet">
-                                <div class="code-header">
-                                    <div class="code-dots">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                    <span class="code-title">profile.js</span>
-                                </div>
-                                <div class="code-content">
-                                    <pre><code>const developer = {
-  name: "RAZAFINDRAKOTO Santatriniaina",
-  role: "Développeur Full Stack",
-  focus: "Créer des solutions digitales innovantes",
-  skills: ["JavaScript", "React", "Node.js", "Python"],
-  philosophy: "Transformer des idées en réalité"
-};</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section Compétences -->
-    <section id="competences" class="skills-section">
-        <div class="container">
-            <h2 class="section-title text-center">
-                <span class="section-number">02</span>
-                Mes Compétences
-            </h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Développement Frontend</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item" data-skill="95">
-                                <div class="skill-info">
-                                    <span class="skill-name">React.js</span>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="90">
-                                <div class="skill-info">
-                                    <span class="skill-name">Vue.js</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="85">
-                                <div class="skill-info">
-                                    <span class="skill-name">TypeScript</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="88">
-                                <div class="skill-info">
-                                    <span class="skill-name">HTML/CSS</span>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <figure class="hero-portrait">
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcset="assets/images/profil-400.webp 400w, assets/images/profil-800.webp 800w"
+                                sizes="(max-width: 860px) 320px, 400px">
+                            <source
+                                type="image/jpeg"
+                                srcset="assets/images/profil-400.jpg 400w, assets/images/profil-800.jpg 800w"
+                                sizes="(max-width: 860px) 320px, 400px">
+                            <img
+                                src="assets/images/profil-800.jpg"
+                                srcset="assets/images/profil-400.jpg 400w, assets/images/profil-800.jpg 800w"
+                                sizes="(max-width: 860px) 320px, 400px"
+                                alt="Portrait de RAZAFINDRAKOTO Santatriniaina"
+                                width="800" height="800"
+                                loading="eager"
+                                fetchpriority="high"
+                                decoding="async">
+                        </picture>
+                    </figure>
                 </div>
-                <div class="col-lg-6">
-                    <div class="skill-category">
-                        <h3 class="skill-category-title">Développement Backend</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item" data-skill="90">
-                                <div class="skill-info">
-                                    <span class="skill-name">Node.js</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="85">
-                                <div class="skill-info">
-                                    <span class="skill-name">Python/Django</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="80">
-                                <div class="skill-info">
-                                    <span class="skill-name">Base de données</span>
-                                    <span class="skill-percentage">80%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="82">
-                                <div class="skill-info">
-                                    <span class="skill-name">API REST</span>
-                                    <span class="skill-percentage">82%</span>
-                                </div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="skill-category">
-                        <h3 class="skill-category-title text-center">Outils & Technologies</h3>
-                        <div class="tools-grid">
-                            <div class="tool-item">
-                                <i class="fab fa-git-alt"></i>
-                                <span>Git</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-docker"></i>
-                                <span>Docker</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-aws"></i>
-                                <span>AWS</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-database"></i>
-                                <span>MongoDB</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-server"></i>
-                                <span>PostgreSQL</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-database"></i>
-                                <span>SQL Server</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-desktop"></i>
-                                <span>Azure Data Studio</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-figma"></i>
-                                <span>Figma</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-ubuntu"></i>
-                                <span>Ubuntu</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-windows"></i>
-                                <span>Windows</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-code"></i>
-                                <span>VS Code</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fab fa-canva"></i>
-                                <span>Canva</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-cube"></i>
-                                <span>Blender</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-palette"></i>
-                                <span>Adobe Photoshop</span>
-                            </div>
-                            <div class="tool-item">
-                                <i class="fas fa-pen-fancy"></i>
-                                <span>Adobe Illustrator</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section Portfolio avec Carrousel amélioré -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <h2 class="section-title text-center">
-                <span class="section-number">03</span>
-                Mes Réalisations
-            </h2>
-            <div class="portfolio-header text-center mb-5">
-                <p class="portfolio-subtitle">Découvrez une sélection de mes projets les plus significatifs</p>
+                <dl class="hero-facts">
+                    <div><dt data-i18n="hero.fact.education">Formation</dt><dd data-i18n="hero.fact.educationValue">Master Électronique ESPA · en cours</dd></div>
+                    <div><dt data-i18n="hero.fact.specialties">Spécialités</dt><dd data-i18n="hero.fact.specialtiesValue">IoT · Full Stack · DevOps</dd></div>
+                    <div><dt data-i18n="hero.fact.certs">Certifications</dt><dd data-i18n="hero.fact.certsValue">LPI · CODEKO · Spring Boot</dd></div>
+                </dl>
             </div>
 
-            <!-- Carrousel Portfolio amélioré -->
-            <div class="portfolio-carousel">
-                <div class="carousel-container">
-                    <!-- Boutons de navigation flottants -->
-                    <button class="carousel-btn carousel-prev floating-nav-btn" aria-label="Projets précédents">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="carousel-btn carousel-next floating-nav-btn" aria-label="Projets suivants">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+            <a href="#apropos" class="scroll-cue" aria-label="Défiler vers la suite">
+                <span class="scroll-cue-label" data-i18n="hero.scroll">Défiler</span>
+                <span class="scroll-cue-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg>
+                </span>
+            </a>
+        </section>
 
-                    <div class="carousel-track" id="carouselTrack">
-                        <!-- Slide 1 - Projet 1 -->
-                        <div class="carousel-slide">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-image">
-                                            <div class="portfolio-img-placeholder web-bg">
-                                                <i class="fas fa-shopping-cart"></i>
-                                                <span>Application E-commerce</span>
-                                            </div>
-                                            <div class="portfolio-overlay">
-                                                <div class="portfolio-actions">
-                                                    <a href="https://votre-projet-ecommerce.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
-                                                        <i class="fas fa-external-link-alt"></i>
-                                                    </a>
-                                                    <a href="https://github.com/votre-profil/projet-ecommerce" class="portfolio-action-btn" aria-label="Code source" target="_blank">
-                                                        <i class="fas fa-code"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h3 class="portfolio-title">Plateforme E-commerce</h3>
-                                            <p class="portfolio-description">Solution complète de vente en ligne avec système de paiement sécurisé, gestion d'inventaire et analytics avancés.</p>
-                                            <div class="portfolio-features">
-                                                <span class="feature">React</span>
-                                                <span class="feature">Node.js</span>
-                                                <span class="feature">MongoDB</span>
-                                                <span class="feature">Stripe</span>
-                                            </div>
-                                            <div class="portfolio-footer">
-                                                <span class="portfolio-date">2023</span>
-                                                <a href="https://votre-projet-ecommerce.com" class="portfolio-link" target="_blank">
-                                                    Voir le projet <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <!-- 01 — About -->
+        <section id="apropos" class="section">
+            <div class="container section-grid">
+                <header class="section-head">
+                    <p class="section-label" data-i18n="about.label">01 — À propos</p>
+                    <h2 data-i18n="about.title">Le hardware connecté au logiciel.</h2>
+                </header>
 
-                        <!-- Slide 2 - Projet 2 -->
-                        <div class="carousel-slide">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-image">
-                                            <div class="portfolio-img-placeholder web-bg">
-                                                <i class="fas fa-blog"></i>
-                                                <span>Blog Technologique</span>
-                                            </div>
-                                            <div class="portfolio-overlay">
-                                                <div class="portfolio-actions">
-                                                    <a href="https://votre-projet-blog.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
-                                                        <i class="fas fa-external-link-alt"></i>
-                                                    </a>
-                                                    <a href="https://github.com/votre-profil/projet-blog" class="portfolio-action-btn" aria-label="Code source" target="_blank">
-                                                        <i class="fas fa-code"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h3 class="portfolio-title">Blog Technologique</h3>
-                                            <p class="portfolio-description">Plateforme de blog moderne avec système de gestion de contenu, commentaires et analytics intégrés.</p>
-                                            <div class="portfolio-features">
-                                                <span class="feature">Next.js</span>
-                                                <span class="feature">GraphQL</span>
-                                                <span class="feature">PostgreSQL</span>
-                                                <span class="feature">Prisma</span>
-                                            </div>
-                                            <div class="portfolio-footer">
-                                                <span class="portfolio-date">2023</span>
-                                                <a href="https://votre-projet-blog.com" class="portfolio-link" target="_blank">
-                                                    Voir le projet <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="section-body about-body">
+                    <p data-i18n="about.p1">Diplômé d'un Master en Électronique à l'ESPA (École Supérieure Polytechnique d'Antananarivo), je travaille à l'intersection du matériel embarqué et des plateformes logicielles modernes.</p>
+                    <p data-i18n="about.p2">Mon approche : concevoir des solutions complètes, depuis le prototype électronique (ESP32, capteurs, communication MQTT) jusqu'au backend Java Spring Boot ou Python FastAPI, en passant par l'interface Angular et le déploiement Docker/Linux.</p>
 
-                        <!-- Slide 3 - Projet 3 -->
-                        <div class="carousel-slide">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-image">
-                                            <div class="portfolio-img-placeholder mobile-bg">
-                                                <i class="fas fa-tasks"></i>
-                                                <span>Application Mobile</span>
-                                            </div>
-                                            <div class="portfolio-overlay">
-                                                <div class="portfolio-actions">
-                                                    <a href="https://votre-projet-mobile.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
-                                                        <i class="fas fa-external-link-alt"></i>
-                                                    </a>
-                                                    <a href="https://github.com/votre-profil/projet-mobile" class="portfolio-action-btn" aria-label="Code source" target="_blank">
-                                                        <i class="fas fa-code"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h3 class="portfolio-title">App de Productivité</h3>
-                                            <p class="portfolio-description">Application cross-platform pour la gestion de tâches, collaboration d'équipe et suivi de projets en temps réel.</p>
-                                            <div class="portfolio-features">
-                                                <span class="feature">React Native</span>
-                                                <span class="feature">Firebase</span>
-                                                <span class="feature">Redux</span>
-                                                <span class="feature">Push Notifications</span>
-                                            </div>
-                                            <div class="portfolio-footer">
-                                                <span class="portfolio-date">2023</span>
-                                                <a href="https://votre-projet-mobile.com" class="portfolio-link" target="_blank">
-                                                    Voir le projet <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 - Projet 4 -->
-                        <div class="carousel-slide">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-image">
-                                            <div class="portfolio-img-placeholder mobile-bg">
-                                                <i class="fas fa-heartbeat"></i>
-                                                <span>Application Santé</span>
-                                            </div>
-                                            <div class="portfolio-overlay">
-                                                <div class="portfolio-actions">
-                                                    <a href="https://votre-projet-sante.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
-                                                        <i class="fas fa-external-link-alt"></i>
-                                                    </a>
-                                                    <a href="https://github.com/votre-profil/projet-sante" class="portfolio-action-btn" aria-label="Code source" target="_blank">
-                                                        <i class="fas fa-code"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h3 class="portfolio-title">App de Suivi Santé</h3>
-                                            <p class="portfolio-description">Application mobile pour le suivi des activités physiques, nutrition et bien-être avec synchronisation des wearables.</p>
-                                            <div class="portfolio-features">
-                                                <span class="feature">Flutter</span>
-                                                <span class="feature">Node.js</span>
-                                                <span class="feature">MongoDB</span>
-                                                <span class="feature">API Santé</span>
-                                            </div>
-                                            <div class="portfolio-footer">
-                                                <span class="portfolio-date">2023</span>
-                                                <a href="https://votre-projet-sante.com" class="portfolio-link" target="_blank">
-                                                    Voir le projet <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 5 - Projet 5 -->
-                        <div class="carousel-slide">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-image">
-                                            <div class="portfolio-img-placeholder ai-bg">
-                                                <i class="fas fa-robot"></i>
-                                                <span>Système IA</span>
-                                            </div>
-                                            <div class="portfolio-overlay">
-                                                <div class="portfolio-actions">
-                                                    <a href="https://votre-projet-ia.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
-                                                        <i class="fas fa-external-link-alt"></i>
-                                                    </a>
-                                                    <a href="https://github.com/votre-profil/projet-ia" class="portfolio-action-btn" aria-label="Code source" target="_blank">
-                                                        <i class="fas fa-code"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h3 class="portfolio-title">Système de Recommandation IA</h3>
-                                            <p class="portfolio-description">Algorithme d'intelligence artificielle pour la recommandation personnalisée de contenu avec apprentissage automatique.</p>
-                                            <div class="portfolio-features">
-                                                <span class="feature">Python</span>
-                                                <span class="feature">TensorFlow</span>
-                                                <span class="feature">Flask</span>
-                                                <span class="feature">Machine Learning</span>
-                                            </div>
-                                            <div class="portfolio-footer">
-                                                <span class="portfolio-date">2023</span>
-                                                <a href="https://votre-projet-ia.com" class="portfolio-link" target="_blank">
-                                                    Voir le projet <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 6 - Projet 6 -->
-                        <div class="carousel-slide">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8 col-md-10">
-                                    <div class="portfolio-card">
-                                        <div class="portfolio-image">
-                                            <div class="portfolio-img-placeholder ai-bg">
-                                                <i class="fas fa-chart-line"></i>
-                                                <span>Analyse Prédictive</span>
-                                            </div>
-                                            <div class="portfolio-overlay">
-                                                <div class="portfolio-actions">
-                                                    <a href="https://votre-projet-analyse.com" class="portfolio-action-btn" aria-label="Voir en direct" target="_blank">
-                                                        <i class="fas fa-external-link-alt"></i>
-                                                    </a>
-                                                    <a href="https://github.com/votre-profil/projet-analyse" class="portfolio-action-btn" aria-label="Code source" target="_blank">
-                                                        <i class="fas fa-code"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="portfolio-content">
-                                            <h3 class="portfolio-title">Système d'Analyse Prédictive</h3>
-                                            <p class="portfolio-description">Plateforme d'analyse de données et prédictions business avec tableaux de bord interactifs et rapports automatisés.</p>
-                                            <div class="portfolio-features">
-                                                <span class="feature">Python</span>
-                                                <span class="feature">Scikit-learn</span>
-                                                <span class="feature">FastAPI</span>
-                                                <span class="feature">Power BI</span>
-                                            </div>
-                                            <div class="portfolio-footer">
-                                                <span class="portfolio-date">2023</span>
-                                                <a href="https://votre-projet-analyse.com" class="portfolio-link" target="_blank">
-                                                    Voir le projet <i class="fas fa-arrow-right"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Indicateurs du carrousel -->
-                <div class="carousel-indicators">
-                    <span class="indicator active" data-slide="0"></span>
-                    <span class="indicator" data-slide="1"></span>
-                    <span class="indicator" data-slide="2"></span>
-                    <span class="indicator" data-slide="3"></span>
-                    <span class="indicator" data-slide="4"></span>
-                    <span class="indicator" data-slide="5"></span>
+                    <dl class="about-facts">
+                        <div><dt data-i18n="about.location">Localisation</dt><dd data-i18n="about.locationValue">Antananarivo, Madagascar</dd></div>
+                        <div><dt data-i18n="about.availability">Disponibilité</dt><dd data-i18n="about.availabilityValue">Missions &amp; CDI</dd></div>
+                        <div><dt data-i18n="about.languages">Langues</dt><dd data-i18n="about.languagesValue">Français · Malagasy · Anglais technique</dd></div>
+                    </dl>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Section Services -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title text-center">
-                <span class="section-number">04</span>
-                Mes Services
-            </h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Développement Web</h4>
-                        <p>Création d'applications web modernes, réactives et performantes avec les dernières technologies.</p>
-                        <ul class="service-features">
-                            <li>Applications Single Page</li>
-                            <li>Architecture Microservices</li>
-                            <li>Intégration d'APIs</li>
+        <!-- 02 — Tech stack (6 cards) -->
+        <section id="stack" class="section section-alt">
+            <div class="container">
+                <header class="section-head">
+                    <p class="section-label" data-i18n="stack.label">02 — Stack technique</p>
+                    <h2 data-i18n="stack.title">Outils et technologies que j'utilise au quotidien.</h2>
+                </header>
+
+                <div class="stack-grid">
+                    <article class="stack-group">
+                        <h3 data-i18n="stack.frontend">Frontend</h3>
+                        <ul class="tag-list">
+                            <li><svg class="tag-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.93 12.645h4.134L11.996 7.74M11.996.009L.686 3.988l1.725 14.76 9.585 5.243 9.588-5.238L23.308 3.99 11.996.01zm0 2.852 8.55 19.05h-3.22l-1.72-4.28H8.4l-1.72 4.28H4.456l7.54-19.05z"/></svg>Angular</li>
+                            <li><i data-lucide="braces" aria-hidden="true"></i>TypeScript</li>
+                            <li><i data-lucide="code-xml" aria-hidden="true"></i>HTML &amp; CSS</li>
+                            <li><i data-lucide="pen-tool" aria-hidden="true"></i>Qt Designer</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h4>Applications Mobiles</h4>
-                        <p>Développement d'applications mobiles natives et hybrides pour iOS et Android.</p>
-                        <ul class="service-features">
-                            <li>Applications Cross-Platform</li>
-                            <li>UI/UX Optimisée</li>
-                            <li>Performance Maximale</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h4>Solutions IA</h4>
-                        <p>Intégration d'intelligence artificielle et de machine learning dans vos applications.</p>
-                        <ul class="service-features">
-                            <li>Algorithmes Personnalisés</li>
-                            <li>Analyse de Données</li>
-                            <li>Automatisation Intelligente</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </article>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title text-center">
-                <span class="section-number">05</span>
-                Contactez-moi
-            </h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-card">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="contact-info">
-                                    <h3>Travaillons ensemble</h3>
-                                    <p>Discutons de votre projet et transformons vos idées en réalité.</p>
-                                    <div class="contact-details">
-                                        <div class="contact-item">
-                                            <i class="fas fa-envelope"></i>
-                                            <span>santatriniainaraz080@email.com</span>
-                                        </div>
-                                        <div class="contact-item">
-                                            <i class="fas fa-phone"></i>
-                                            <span>+261 34 63 953 06</span>
-                                        </div>
-                                        <div class="contact-item">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                            <span>Antananarivo, Madagascar</span>
-                                        </div>
-                                    </div>
-                                    <div class="social-links">
-                                        <a href="#" class="social-link" aria-label="Profil LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                        <a href="#" class="social-link" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
-                                        <a href="#" class="social-link" aria-label="Profil Twitter"><i class="fab fa-twitter"></i></a>
-                                    </div>
-                                </div>
+                    <article class="stack-group">
+                        <h3 data-i18n="stack.backend">Backend</h3>
+                        <ul class="tag-list">
+                            <li><i data-lucide="coffee" aria-hidden="true"></i>Java Spring Boot</li>
+                            <li><i data-lucide="code-2" aria-hidden="true"></i>Python FastAPI</li>
+                            <li><i data-lucide="plug" aria-hidden="true"></i>API REST</li>
+                            <li><i data-lucide="database" aria-hidden="true"></i>SQL / NoSQL</li>
+                        </ul>
+                    </article>
+
+                    <article class="stack-group">
+                        <h3 data-i18n="stack.ai">Intelligence Artificielle</h3>
+                        <ul class="tag-list">
+                            <li><i data-lucide="sparkles" aria-hidden="true"></i>Claude Code</li>
+                            <li><i data-lucide="share-2" aria-hidden="true"></i>MCP (Model Context Protocol)</li>
+                            <li><i data-lucide="zap" aria-hidden="true"></i>Automatisation</li>
+                            <li><i data-lucide="bot" aria-hidden="true"></i>Agents IA</li>
+                            <li><i data-lucide="workflow" aria-hidden="true"></i>Workflows LLM</li>
+                        </ul>
+                    </article>
+
+                    <article class="stack-group">
+                        <h3 data-i18n="stack.iot">Électronique &amp; IoT</h3>
+                        <ul class="tag-list">
+                            <li><i data-lucide="cpu" aria-hidden="true"></i>Arduino / ESP32</li>
+                            <li><i data-lucide="microchip" aria-hidden="true"></i>Raspberry Pi</li>
+                            <li><i data-lucide="binary" aria-hidden="true"></i>C / C++ embarqué</li>
+                            <li><i data-lucide="radio-tower" aria-hidden="true"></i>MQTT · HTTP</li>
+                            <li><i data-lucide="wifi" aria-hidden="true"></i>WiFi · Bluetooth</li>
+                            <li><i data-lucide="layout-grid" aria-hidden="true"></i>KiCad</li>
+                            <li><i data-lucide="activity" aria-hidden="true"></i>Proteus</li>
+                            <li><i data-lucide="circuit-board" aria-hidden="true"></i>Conception PCB</li>
+                        </ul>
+                    </article>
+
+                    <article class="stack-group">
+                        <h3 data-i18n="stack.devopsData">DevOps, Cloud &amp; Données</h3>
+                        <ul class="tag-list">
+                            <li><i data-lucide="terminal" aria-hidden="true"></i>Linux (Ubuntu)</li>
+                            <li><i data-lucide="container" aria-hidden="true"></i>Docker</li>
+                            <li><i data-lucide="git-branch" aria-hidden="true"></i>Git</li>
+                            <li><i data-lucide="github" aria-hidden="true"></i>GitHub</li>
+                            <li><i data-lucide="gitlab" aria-hidden="true"></i>GitLab</li>
+                            <li><i data-lucide="git-fork" aria-hidden="true"></i>Bitbucket</li>
+                            <li><i data-lucide="kanban-square" aria-hidden="true"></i>Jira</li>
+                            <li><i data-lucide="database" aria-hidden="true"></i>PostgreSQL</li>
+                            <li><i data-lucide="server" aria-hidden="true"></i>SQL Server</li>
+                            <li><i data-lucide="hard-drive" aria-hidden="true"></i>SQLite3</li>
+                            <li><i data-lucide="monitor" aria-hidden="true"></i>Azure Data Studio</li>
+                        </ul>
+                    </article>
+
+                    <article class="stack-group">
+                        <h3 data-i18n="stack.designTools">Design &amp; Outils</h3>
+                        <ul class="tag-list">
+                            <li><i data-lucide="image" aria-hidden="true"></i>Adobe Photoshop</li>
+                            <li><i data-lucide="pen-tool" aria-hidden="true"></i>Adobe Illustrator</li>
+                            <li><i data-lucide="wand-2" aria-hidden="true"></i>Canva</li>
+                            <li><i data-lucide="box" aria-hidden="true"></i>Blender</li>
+                            <li><i data-lucide="file-code" aria-hidden="true"></i>VS Code</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 — Projects (empty state, awaiting content) -->
+        <section id="projets" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <p class="section-label" data-i18n="projects.label">03 — Projets</p>
+                    <h2 data-i18n="projects.title">Réalisations sélectionnées.</h2>
+                </header>
+
+                <div class="projects-empty">
+                    <p data-i18n="projects.empty">Cette section sera bientôt remplie avec des projets concrets : contexte, problème résolu, technologies, résultat et liens GitHub.</p>
+                    <a href="https://github.com/Santatriniainaa" target="_blank" rel="noopener" class="btn btn-ghost">
+                        <i data-lucide="github" aria-hidden="true"></i>
+                        <span data-i18n="projects.cta">Voir mes dépôts GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 — Background : studies (timeline) + certifications (cards) -->
+        <section id="formation" class="section section-alt">
+            <div class="container">
+                <header class="section-head">
+                    <p class="section-label" data-i18n="education.label">04 — Parcours &amp; certifications</p>
+                    <h2 data-i18n="education.title">Études et formations techniques.</h2>
+                </header>
+
+                <div class="subsection">
+                    <header class="subsection-head">
+                        <h3 data-i18n="education.studies">Études</h3>
+                        <p class="muted" data-i18n="education.studiesSub">Parcours académique en électronique.</p>
+                    </header>
+
+                    <ol class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date" data-i18n="edu.master.date">2024 — aujourd'hui (en cours)</span>
+                                <span class="timeline-kind">Bac+5</span>
                             </div>
-                            <div class="col-md-6">
-                                <form class="contact-form" id="contactForm">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Votre nom" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Votre email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Sujet" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea class="form-control" rows="4" placeholder="Votre message" required></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary w-100">Envoyer le message</button>
-                                </form>
+                            <div class="timeline-body">
+                                <h4 data-i18n="edu.master.title">Master en Électronique</h4>
+                                <p class="timeline-org">ESPA — École Supérieure Polytechnique d'Antananarivo</p>
+                                <p data-i18n="edu.master.desc">Spécialisation en systèmes embarqués et IoT : traitement du signal, microcontrôleurs avancés, conception PCB, communication sans fil et intégration logicielle / matérielle pour des solutions connectées industrielles.</p>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2021 — 2024</span>
+                                <span class="timeline-kind">Bac+3</span>
+                            </div>
+                            <div class="timeline-body">
+                                <h4 data-i18n="edu.licence.title">Licence en Électronique</h4>
+                                <p class="timeline-org">ESPA — École Supérieure Polytechnique d'Antananarivo</p>
+                                <p data-i18n="edu.licence.desc">Fondamentaux de l'électronique analogique et numérique, programmation des microcontrôleurs (Arduino, ESP32), automatisme, bases de l'informatique embarquée et premiers projets IoT.</p>
+                            </div>
+                        </li>
+
+                        <li class="timeline-item">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">2017 — 2018</span>
+                                <span class="timeline-kind">Bac</span>
+                            </div>
+                            <div class="timeline-body">
+                                <h4 data-i18n="edu.bac.title">Baccalauréat Série C</h4>
+                                <p class="timeline-org">Lycée Saint Pierre Canisius — Ambohipo</p>
+                                <p data-i18n="edu.bac.desc">Série scientifique à dominante mathématiques et physique-chimie. Voie d'accès aux grandes écoles d'ingénieurs Malagasy.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="subsection">
+                    <header class="subsection-head">
+                        <h3 data-i18n="education.tech">Formations techniques</h3>
+                        <p class="muted" data-i18n="education.techSub">Certifications et apprentissages spécialisés.</p>
+                    </header>
+
+                    <div class="cert-grid">
+                        <article class="cert-card">
+                            <div class="cert-card-head">
+                                <span class="cert-status cert-status--done">Certifié</span>
+                                <i data-lucide="terminal" class="cert-icon" aria-hidden="true"></i>
+                            </div>
+                            <h4>Linux Essentials</h4>
+                            <p class="cert-org">LPI — Linux Professional Institute</p>
+                            <p class="cert-desc">Fondamentaux Linux : ligne de commande, gestion des utilisateurs, fichiers, processus et services.</p>
+                            <ul class="tag-list cert-tags">
+                                <li>Linux</li>
+                                <li>LPI</li>
+                            </ul>
+                        </article>
+
+                        <article class="cert-card">
+                            <div class="cert-card-head">
+                                <span class="cert-status cert-status--progress">En cours</span>
+                                <i data-lucide="cloud" class="cert-icon" aria-hidden="true"></i>
+                            </div>
+                            <h4>Cloud &amp; DevOps</h4>
+                            <p class="cert-org">CODEKO</p>
+                            <p class="cert-desc">Pipelines CI/CD, conteneurisation, déploiement cloud et automatisation d'infrastructures.</p>
+                            <ul class="tag-list cert-tags">
+                                <li>Cloud</li>
+                                <li>DevOps</li>
+                                <li>CI/CD</li>
+                            </ul>
+                        </article>
+
+                        <article class="cert-card">
+                            <div class="cert-card-head">
+                                <span class="cert-status cert-status--self">Autodidacte</span>
+                                <i data-lucide="leaf" class="cert-icon" aria-hidden="true"></i>
+                            </div>
+                            <h4>Spring Boot</h4>
+                            <p class="cert-org">Apprentissage autodidacte</p>
+                            <p class="cert-desc">APIs Java REST, JPA / Hibernate, sécurité, tests et architecture microservices.</p>
+                            <ul class="tag-list cert-tags">
+                                <li>Java</li>
+                                <li>Spring Boot</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 — Services -->
+        <section id="services" class="section">
+            <div class="container">
+                <header class="section-head">
+                    <p class="section-label" data-i18n="services.label">05 — Services</p>
+                    <h2 data-i18n="services.title">Ce que je peux construire pour vous.</h2>
+                </header>
+
+                <div class="services-grid">
+                    <article class="service-card">
+                        <span class="service-num">01</span>
+                        <h3 data-i18n="services.fullstack">Développement Full Stack</h3>
+                        <p data-i18n="services.fullstackDesc">Conception d'applications web complètes, du frontend Angular au backend Java Spring Boot ou Python FastAPI.</p>
+                        <ul>
+                            <li>Applications Angular &amp; TypeScript</li>
+                            <li>APIs REST Spring Boot / FastAPI</li>
+                            <li>Bases de données SQL / NoSQL</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card">
+                        <span class="service-num">02</span>
+                        <h3 data-i18n="services.iot">IoT &amp; Systèmes Embarqués</h3>
+                        <p data-i18n="services.iotDesc">Solutions connectées : prototypage électronique, programmation de microcontrôleurs et intégration cloud.</p>
+                        <ul>
+                            <li>Arduino, ESP32, Raspberry Pi</li>
+                            <li>Capteurs, MQTT, WiFi / Bluetooth</li>
+                            <li>Tableaux de bord IoT &amp; cloud</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card">
+                        <span class="service-num">03</span>
+                        <h3 data-i18n="services.devops">Cloud &amp; DevOps</h3>
+                        <p data-i18n="services.devopsDesc">Mise en place de pipelines CI/CD, conteneurisation et déploiement d'infrastructures fiables et automatisées.</p>
+                        <ul>
+                            <li>Docker &amp; conteneurisation</li>
+                            <li>CI/CD avec GitLab / GitHub</li>
+                            <li>Administration Linux &amp; cloud</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 — Contact : availability + channels + Web3Forms form -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <header class="section-head">
+                    <p class="section-label" data-i18n="contact.label">06 — Contact</p>
+                    <h2 data-i18n="contact.title">Discutons de votre projet.</h2>
+                    <p class="contact-intro" data-i18n="contact.intro">Disponible pour des missions IoT, full stack ou DevOps.</p>
+                </header>
+
+                <div class="contact-shell">
+                    <aside class="contact-side">
+                        <div class="availability">
+                            <span class="availability-dot" aria-hidden="true"></span>
+                            <div>
+                                <p class="availability-title" data-i18n="contact.available">Disponible pour un nouveau projet</p>
+                                <p class="availability-sub" data-i18n="contact.responseTime">Réponse sous 48 h ouvrées</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4 class="futuristic-text">RAZAFINDRAKOTO Santatriniaina</h4>
-                    <p>Développeur Full Stack & Architecte de Solutions Digitales</p>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+                        <div class="contact-channels">
+                            <a class="channel" href="https://wa.me/261346395306" target="_blank" rel="noopener">
+                                <span class="channel-icon channel-icon--whatsapp">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.488"/></svg>
+                                </span>
+                                <span class="channel-body">
+                                    <span class="channel-label">WhatsApp</span>
+                                    <span class="channel-value">+261 34 63 953 06</span>
+                                </span>
+                                <span class="channel-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </span>
+                            </a>
+
+                            <a class="channel" href="mailto:santatriniainaraz080@gmail.com?subject=Contact%20depuis%20le%20portfolio">
+                                <span class="channel-icon channel-icon--mail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+                                </span>
+                                <span class="channel-body">
+                                    <span class="channel-label" data-i18n="contact.email">Email</span>
+                                    <span class="channel-value">santatriniainaraz080@gmail.com</span>
+                                </span>
+                                <span class="channel-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </span>
+                            </a>
+
+                            <div class="channel channel--static">
+                                <span class="channel-icon channel-icon--location">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </span>
+                                <span class="channel-body">
+                                    <span class="channel-label" data-i18n="contact.location">Localisation</span>
+                                    <span class="channel-value" data-i18n="contact.locationValue">Antananarivo, Madagascar</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="contact-socials">
+                            <p class="contact-socials-title" data-i18n="contact.socials">Sur le web</p>
+                            <ul class="contact-socials-list">
+                                <li><a href="https://github.com/Santatriniainaa" target="_blank" rel="noopener" aria-label="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                                </a></li>
+                                <li><a href="https://www.facebook.com/santatra.ny.aina.589892/" target="_blank" rel="noopener" aria-label="Facebook">
+                                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                        <input type="hidden" name="from_name" value="Portfolio — Santatriniaina">
+                        <input type="hidden" name="subject" value="Nouveau message depuis le portfolio">
+                        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <p class="form-title" data-i18n="form.title">Envoyer un message</p>
+
+                        <div class="form-row form-row--split">
+                            <div class="field">
+                                <input id="f-name" type="text" name="name" placeholder=" " required autocomplete="name">
+                                <label for="f-name" data-i18n="form.name">Nom</label>
+                            </div>
+                            <div class="field">
+                                <input id="f-email" type="email" name="email" placeholder=" " required autocomplete="email">
+                                <label for="f-email" data-i18n="form.email">Email</label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <input id="f-subject" type="text" name="topic" placeholder=" " required>
+                            <label for="f-subject" data-i18n="form.subject">Sujet</label>
+                        </div>
+
+                        <div class="field">
+                            <textarea id="f-message" name="message" rows="5" placeholder=" " required></textarea>
+                            <label for="f-message" data-i18n="form.message">Message</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <span data-i18n="form.send">Envoyer</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </button>
+                        <p class="form-note" data-i18n="form.note">Vos données restent confidentielles, jamais partagées.</p>
+                    </form>
                 </div>
             </div>
-            <hr>
-            <div class="text-center">
-                <p>&copy; 2023 RAZAFINDRAKOTO Santatriniaina. Tous droits réservés.</p>
+        </section>
+    </main>
+
+    <!-- Floating UI : back-to-top (visible past 400px of scroll) -->
+    <a href="#accueil" class="back-to-top" aria-label="Retour en haut">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </a>
+
+    <!-- Footer : brand, navigation, contacts, socials -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand brand--footer" href="#accueil">
+                        <span class="brand-mark">R</span>
+                        <span class="brand-name">Santatriniaina</span>
+                    </a>
+                    <p class="muted" data-i18n="footer.role">Ingénieur électronique &amp; développeur full stack</p>
+                    <p class="footer-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span data-i18n="footer.location">Antananarivo, Madagascar</span>
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <p class="footer-col-title" data-i18n="footer.nav">Navigation</p>
+                    <ul>
+                        <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
+                        <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+                        <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+                        <li><a href="#formation" data-i18n="nav.background">Parcours</a></li>
+                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <p class="footer-col-title" data-i18n="footer.reach">Me joindre</p>
+                    <ul>
+                        <li><a href="mailto:santatriniainaraz080@gmail.com?subject=Contact%20depuis%20le%20portfolio">santatriniainaraz080@gmail.com</a></li>
+                        <li><a href="https://wa.me/261346395306" target="_blank" rel="noopener">+261 34 63 953 06</a></li>
+                        <li><a href="assets/cv-santatriniaina.pdf" download data-i18n="footer.downloadCv">Télécharger le CV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <p class="footer-col-title" data-i18n="footer.social">Réseaux</p>
+                    <ul class="footer-socials">
+                        <li><a href="https://github.com/Santatriniainaa" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <span>GitHub</span>
+                        </a></li>
+                        <li><a href="https://www.facebook.com/santatra.ny.aina.589892/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+                            <span>Facebook</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="muted">&copy; <span id="current-year">2026</span> RAZAFINDRAKOTO Santatriniaina · <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <p class="footer-built" data-i18n="footer.built">Conçu &amp; développé avec attention à Antananarivo.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bouton retour en haut -->
-    <a href="#" class="back-to-top" aria-label="Retour en haut de la page">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+    <!-- Mobile sticky bar : quick WhatsApp + Email actions -->
+    <div class="mobile-cta" role="navigation" aria-label="Contact rapide">
+        <a class="mobile-cta-btn mobile-cta-whatsapp" href="https://wa.me/261346395306" target="_blank" rel="noopener">
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.488"/></svg>
+            <span>WhatsApp</span>
+        </a>
+        <a class="mobile-cta-btn mobile-cta-email" href="mailto:santatriniainaraz080@gmail.com?subject=Contact%20depuis%20le%20portfolio">
+            <i data-lucide="mail" aria-hidden="true"></i>
+            <span>Email</span>
+        </a>
+    </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

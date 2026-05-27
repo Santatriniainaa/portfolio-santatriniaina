@@ -1,617 +1,440 @@
-/**
- * Script principal du portfolio
- * Gère les interactions, animations et fonctionnalités
- */
+/* ====================  CONSTANTS  ==================== */
 
-// Initialisation lorsque le DOM est chargé
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 Initialisation du portfolio...');
-    
-    // Initialisation de toutes les fonctionnalités
-    initThemeSwitcher();
-    initNavigation();
-    initScrollEffects();
-    initAnimations();
-    initPortfolioCarousel();
+/* ------------  Inline SVG icons for critical nav buttons  ------------ */
+const INLINE_ICONS = {
+    moon: '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+    sun:  '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
+    menu: '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>',
+    x:    '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
+};
+
+/* ------------  i18n dictionary (FR is the source, EN is the translation)  ------------ */
+const I18N = {
+    en: {
+        'nav.about': 'About',
+        'nav.stack': 'Stack',
+        'nav.projects': 'Projects',
+        'nav.background': 'Background',
+        'nav.services': 'Services',
+        'nav.contact': 'Contact',
+
+        'hero.eyebrow': 'Antananarivo, Madagascar — available',
+        'hero.role': 'Electronics engineering student · Full-stack developer',
+        'hero.lede': 'I design IoT systems and web applications, from board to cloud. Currently pursuing my Master at ESPA (Antananarivo).',
+        'hero.downloadCv': 'Download my CV',
+        'hero.contactMe': 'Contact me',
+        'hero.fact.education': 'Education',
+        'hero.fact.educationValue': 'Master Electronics ESPA · in progress',
+        'hero.fact.specialties': 'Expertise',
+        'hero.fact.specialtiesValue': 'IoT · Full Stack · DevOps',
+        'hero.fact.certs': 'Certifications',
+        'hero.fact.certsValue': 'LPI · CODEKO · Spring Boot',
+        'hero.scroll': 'Scroll',
+
+        'about.label': '01 — About',
+        'about.title': 'Where hardware meets software.',
+        'about.p1': "M.Sc. in Electronics from ESPA (École Supérieure Polytechnique d'Antananarivo), I work at the intersection of embedded hardware and modern software platforms.",
+        'about.p2': 'My approach: design complete solutions, from electronic prototypes (ESP32, sensors, MQTT) to Java Spring Boot or Python FastAPI backends, through Angular interfaces and Docker/Linux deployment.',
+        'about.location': 'Location',
+        'about.locationValue': 'Antananarivo, Madagascar',
+        'about.availability': 'Availability',
+        'about.availabilityValue': 'Freelance & full-time',
+        'about.languages': 'Languages',
+        'about.languagesValue': 'French · Malagasy · Technical English',
+
+        'stack.label': '02 — Tech stack',
+        'stack.title': 'Tools and technologies I use daily.',
+        'stack.frontend': 'Frontend',
+        'stack.backend': 'Backend',
+        'stack.ai': 'Artificial Intelligence',
+        'stack.iot': 'Electronics & IoT',
+        'stack.devopsData': 'DevOps, Cloud & Data',
+        'stack.designTools': 'Design & Tools',
+
+        'projects.label': '03 — Projects',
+        'projects.title': 'Selected work.',
+        'projects.empty': 'This section will soon be filled with real projects: context, problem solved, technologies, results and GitHub links.',
+        'projects.cta': 'See my GitHub repositories',
+
+        'education.label': '04 — Background & certifications',
+        'education.title': 'Studies and technical training.',
+        'education.studies': 'Studies',
+        'education.studiesSub': 'Academic background in electronics.',
+        'education.tech': 'Technical training',
+        'education.techSub': 'Certifications and specialized learning.',
+        'edu.master.date': '2024 — present (in progress)',
+        'edu.master.title': "Master's in Electronics",
+        'edu.master.desc': 'Specialization in embedded systems and IoT: signal processing, advanced microcontrollers, PCB design, wireless communication, and software/hardware integration for connected industrial solutions.',
+        'edu.licence.title': "Bachelor's in Electronics",
+        'edu.licence.desc': 'Foundations of analog and digital electronics, microcontroller programming (Arduino, ESP32), automation, embedded computing fundamentals, and first IoT projects.',
+        'edu.bac.title': 'High-School Diploma — Science Track (Série C)',
+        'edu.bac.desc': "Scientific track focused on mathematics and physics. Gateway to Malagasy's top engineering schools.",
+
+        'services.label': '05 — Services',
+        'services.title': 'What I can build for you.',
+        'services.fullstack': 'Full-Stack Development',
+        'services.fullstackDesc': 'Complete web applications, from Angular frontend to Java Spring Boot or Python FastAPI backend.',
+        'services.iot': 'IoT & Embedded Systems',
+        'services.iotDesc': 'Connected solutions: electronic prototyping, microcontroller programming, and cloud integration.',
+        'services.devops': 'Cloud & DevOps',
+        'services.devopsDesc': 'CI/CD pipelines, containerization, and deployment of reliable, automated infrastructures.',
+
+        'contact.label': '06 — Contact',
+        'contact.title': "Let's discuss your project.",
+        'contact.intro': 'Available for IoT, full-stack or DevOps missions.',
+        'contact.email': 'Email',
+        'contact.location': 'Location',
+        'contact.locationValue': 'Antananarivo, Madagascar',
+        'contact.available': 'Available for new projects',
+        'contact.responseTime': 'Response within 48 business hours',
+        'contact.socials': 'On the web',
+        'form.title': 'Send a message',
+        'form.name': 'Name',
+        'form.email': 'Email',
+        'form.subject': 'Subject',
+        'form.message': 'Message',
+        'form.send': 'Send',
+        'form.note': 'Your data stays confidential, never shared.',
+
+        'footer.role': 'Electronics engineer & full-stack developer',
+        'footer.location': 'Antananarivo, Madagascar',
+        'footer.nav': 'Navigation',
+        'footer.reach': 'Reach out',
+        'footer.downloadCv': 'Download CV',
+        'footer.social': 'Socials',
+        'footer.rights': 'All rights reserved.',
+        'footer.built': 'Designed & built with care in Antananarivo.',
+    },
+};
+
+/* ====================  ENTRY POINT  ==================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderIcons();
+    initTheme();
+    initLanguage();
+    initNav();
+    initScrollSpy();
+    initReveal();
+    initBackToTop();
     initContactForm();
-    initStatistics();
-    initSkillsAnimation();
-    
-    console.log('✅ Portfolio initialisé avec succès');
+    initFooterYear();
+    initMagneticCta();
+    initHeroScroll();
 });
 
-/**
- * Gestionnaire du switch de thème
- */
-function initThemeSwitcher() {
-    const themeToggleDesktop = document.getElementById('theme-toggle');
-    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-    const body = document.body;
+/* ====================  INIT FUNCTIONS  ==================== */
 
-    // Récupération du thème sauvegardé ou détection des préférences système
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    body.setAttribute('data-theme', initialTheme);
-    
-    // Synchronisation des switches
-    if (themeToggleDesktop) themeToggleDesktop.checked = initialTheme === 'dark';
-    if (themeToggleMobile) themeToggleMobile.checked = initialTheme === 'dark';
-
-    /**
-     * Basculer entre les thèmes
-     * @param {boolean} isDark - True pour thème sombre, false pour thème clair
-     */
-    function toggleTheme(isDark) {
-        if (isDark) {
-            body.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            console.log('🌙 Thème sombre activé');
-        } else {
-            body.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            console.log('☀️ Thème clair activé');
-        }
+/* ------------  Replace <i data-lucide="..."> with SVGs from Lucide  ------------ */
+function renderIcons(root = document) {
+    if (typeof window.lucide === 'undefined') {
+        return window.setTimeout(() => renderIcons(root), 50);
     }
-
-    // Événements pour le switch desktop
-    if (themeToggleDesktop) {
-        themeToggleDesktop.addEventListener('change', function() {
-            toggleTheme(this.checked);
-            if (themeToggleMobile) themeToggleMobile.checked = this.checked;
-        });
-    }
-
-    // Événements pour le switch mobile
-    if (themeToggleMobile) {
-        themeToggleMobile.addEventListener('change', function() {
-            toggleTheme(this.checked);
-            if (themeToggleDesktop) themeToggleDesktop.checked = this.checked;
-        });
-    }
-
-    // Écoute des changements de préférences système
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-        if (!localStorage.getItem('theme')) {
-            const newTheme = e.matches ? 'dark' : 'light';
-            body.setAttribute('data-theme', newTheme);
-            if (themeToggleDesktop) themeToggleDesktop.checked = newTheme === 'dark';
-            if (themeToggleMobile) themeToggleMobile.checked = newTheme === 'dark';
-            console.log('🖥️ Thème système détecté:', newTheme);
-        }
+    window.lucide.createIcons({
+        nameAttr: 'data-lucide',
+        attrs: { 'stroke-width': '1.75' },
     });
 }
 
-/**
- * Gestionnaire de navigation
- */
-function initNavigation() {
-    const navbar = document.querySelector('.navbar');
-    
-    // Ajout de la classe lors du défilement
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-        }
-    });
+/* ------------  Light/dark toggle with View Transitions API + system preference  ------------ */
+function initTheme() {
+    const btn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
 
-    // Navigation fluide
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 70;
-                
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-                
-                // Fermeture du menu mobile après clic
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (bsCollapse) bsCollapse.hide();
-                }
-            }
-        });
-    });
-}
+    const stored = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = stored || (systemDark ? 'dark' : 'light');
+    applyTheme(initial);
 
-/**
- * Effets de défilement
- */
-function initScrollEffects() {
-    const backToTopButton = document.querySelector('.back-to-top');
+    btn?.addEventListener('click', (e) => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', next);
 
-    // Affichage/masquage du bouton retour en haut
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('active');
-        } else {
-            backToTopButton.classList.remove('active');
-        }
-    });
-
-    // Retour en haut fluide
-    backToTopButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-/**
- * Animations générales
- */
-function initAnimations() {
-    /**
-     * Animation au défilement
-     */
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.animate-fadeInUp');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    }
-
-    // Initialisation et écoute du défilement
-    animateOnScroll();
-    window.addEventListener('scroll', animateOnScroll);
-
-    // Animations des cartes de services
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // Création des particules animées
-    createParticles();
-}
-
-/**
- * Carrousel du portfolio amélioré avec boutons flottants
- */
-function initPortfolioCarousel() {
-    const track = document.getElementById('carouselTrack');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevBtns = document.querySelectorAll('.carousel-prev');
-    const nextBtns = document.querySelectorAll('.carousel-next');
-    const indicators = document.querySelectorAll('.indicator');
-    
-    if (!track || slides.length === 0) return;
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    
-    /**
-     * Mise à jour du carrousel
-     */
-    function updateCarousel() {
-        // Déplacement du track
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
-        
-        // Mise à jour des indicateurs
-        indicators.forEach((indicator, index) => {
-            if (index === currentSlide) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
-        });
-        
-        // Gestion des boutons de navigation
-        const isFirstSlide = currentSlide === 0;
-        const isLastSlide = currentSlide === totalSlides - 1;
-        
-        prevBtns.forEach(btn => {
-            btn.disabled = isFirstSlide;
-            if (isFirstSlide) {
-                btn.style.opacity = '0.3';
-                btn.style.cursor = 'not-allowed';
-            } else {
-                btn.style.opacity = '';
-                btn.style.cursor = 'pointer';
-            }
-        });
-        
-        nextBtns.forEach(btn => {
-            btn.disabled = isLastSlide;
-            if (isLastSlide) {
-                btn.style.opacity = '0.3';
-                btn.style.cursor = 'not-allowed';
-            } else {
-                btn.style.opacity = '';
-                btn.style.cursor = 'pointer';
-            }
-        });
-        
-        // Ajout d'une classe pour l'animation
-        track.classList.add('sliding');
-        setTimeout(() => {
-            track.classList.remove('sliding');
-        }, 500);
-    }
-    
-    /**
-     * Slide suivant
-     */
-    function nextSlide() {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-            updateCarousel();
-        }
-    }
-    
-    /**
-     * Slide précédent
-     */
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-            updateCarousel();
-        }
-    }
-    
-    /**
-     * Aller à un slide spécifique
-     * @param {number} slideIndex - Index du slide
-     */
-    function goToSlide(slideIndex) {
-        if (slideIndex >= 0 && slideIndex < totalSlides) {
-            currentSlide = slideIndex;
-            updateCarousel();
-        }
-    }
-    
-    // Événements des boutons (tous les boutons)
-    prevBtns.forEach(btn => {
-        btn.addEventListener('click', prevSlide);
-    });
-    
-    nextBtns.forEach(btn => {
-        btn.addEventListener('click', nextSlide);
-    });
-    
-    // Événements des indicateurs
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => goToSlide(index));
-    });
-    
-    // Navigation au clavier
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            nextSlide();
-        }
-    });
-    
-    // Navigation tactile (swipe)
-    let startX = 0;
-    let endX = 0;
-    
-    track.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-    });
-    
-    track.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
-    
-    /**
-     * Gestion du swipe
-     */
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        
-        if (startX - endX > swipeThreshold) {
-            // Swipe gauche -> slide suivant
-            nextSlide();
-        } else if (endX - startX > swipeThreshold) {
-            // Swipe droite -> slide précédent
-            prevSlide();
-        }
-    }
-    
-    // Initialisation
-    updateCarousel();
-}
-
-/**
- * Gestionnaire du formulaire de contact
- */
-function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (!contactForm) return;
-    
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const submitButton = this.querySelector('button[type="submit"]');
-        const originalText = submitButton.innerHTML;
-        
-        // État de chargement
-        submitButton.innerHTML = '<span class="loading-spinner"></span>Envoi en cours...';
-        submitButton.disabled = true;
-        
-        // Collecte des données
-        const formData = {
-            name: this.querySelector('input[type="text"]').value,
-            email: this.querySelector('input[type="email"]').value,
-            subject: this.querySelectorAll('input[type="text"]')[1].value,
-            message: this.querySelector('textarea').value
-        };
-        
-        // Validation
-        if (!validateForm(formData)) {
-            showNotification('Veuillez remplir tous les champs correctement.', 'error');
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
+        if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            applyTheme(next);
             return;
         }
-        
-        // Simulation d'envoi (à remplacer par une vraie requête AJAX)
-        setTimeout(() => {
-            console.log('📧 Données du formulaire:', formData);
-            showNotification('Merci pour votre message ! Je vous répondrai dans les plus brefs délais.', 'success');
-            this.reset();
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }, 2000);
-    });
-    
-    /**
-     * Validation du formulaire
-     * @param {Object} data - Données du formulaire
-     * @returns {boolean} - True si valide
-     */
-    function validateForm(data) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        
-        if (!data.name.trim() || !data.email.trim() || !data.subject.trim() || !data.message.trim()) {
-            return false;
-        }
-        
-        if (!emailRegex.test(data.email)) {
-            return false;
-        }
-        
-        return true;
-    }
-    
-    /**
-     * Affichage des notifications
-     * @param {string} message - Message à afficher
-     * @param {string} type - Type de notification (success/error)
-     */
-    function showNotification(message, type) {
-        // Suppression des notifications existantes
-        document.querySelectorAll('.custom-alert').forEach(alert => alert.remove());
-        
-        const notification = document.createElement('div');
-        notification.className = `custom-alert alert-${type === 'success' ? 'success' : 'error'}`;
-        notification.innerHTML = `
-            <div class="d-flex justify-content-between align-items-center">
-                <span>${message}</span>
-                <button type="button" class="btn-close btn-close-white" onclick="this.parentElement.parentElement.remove()"></button>
-            </div>
-        `;
-        
-        document.body.appendChild(notification);
-        
-        // Auto-suppression après 5 secondes
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
-        }, 5000);
-    }
-}
+        const rect = e.currentTarget.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const radius = Math.hypot(Math.max(cx, innerWidth - cx), Math.max(cy, innerHeight - cy));
 
-/**
- * Animation des statistiques
- */
-function initStatistics() {
-    const stats = document.querySelectorAll('.stat-number');
-    
-    if (stats.length === 0) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateStats();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-        observer.observe(heroSection);
-    }
-    
-    /**
-     * Animation des compteurs
-     */
-    function animateStats() {
-        stats.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-count'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
+        const transition = document.startViewTransition(() => applyTheme(next));
+        transition.ready.then(() => {
+            document.documentElement.animate(
+                {
+                    clipPath: [
+                        `circle(0 at ${cx}px ${cy}px)`,
+                        `circle(${radius}px at ${cx}px ${cy}px)`,
+                    ],
+                },
+                {
+                    duration: 480,
+                    easing: 'cubic-bezier(0.65, 0, 0.35, 1)',
+                    pseudoElement: '::view-transition-new(root)',
                 }
-                stat.textContent = Math.floor(current);
-            }, 16);
-        });
-    }
-}
-
-/**
- * Animation des compétences
- */
-function initSkillsAnimation() {
-    const skillItems = document.querySelectorAll('.skill-item');
-    
-    if (skillItems.length === 0) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkills();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
-    
-    const skillsSection = document.querySelector('.skills-section');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    }
-    
-    /**
-     * Animation des barres de compétences
-     */
-    function animateSkills() {
-        skillItems.forEach((item, index) => {
-            const skillLevel = item.getAttribute('data-skill');
-            const progressBar = item.querySelector('.skill-progress');
-            
-            // Réinitialisation
-            progressBar.style.width = '0%';
-            
-            // Animation avec délai
-            setTimeout(() => {
-                progressBar.style.width = `${skillLevel}%`;
-                progressBar.style.transition = `width 1.5s ease-in-out ${index * 0.2}s`;
-            }, 300);
-        });
-    }
-}
-
-/**
- * Création des particules animées
- */
-function createParticles() {
-    const particlesContainer = document.querySelector('.floating-shapes');
-    
-    if (!particlesContainer) return;
-    
-    particlesContainer.innerHTML = '';
-    
-    // Génération de 8 particules
-    for (let i = 0; i < 8; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('shape');
-        
-        const size = Math.random() * 60 + 20;
-        const top = Math.random() * 100;
-        const left = Math.random() * 100;
-        const delay = Math.random() * 8;
-        const opacity = Math.random() * 0.2 + 0.05;
-        const animationDuration = Math.random() * 4 + 4;
-        
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.top = `${top}%`;
-        particle.style.left = `${left}%`;
-        particle.style.animationDelay = `${delay}s`;
-        particle.style.animationDuration = `${animationDuration}s`;
-        particle.style.background = `rgba(108, 99, 255, ${opacity})`;
-        
-        particlesContainer.appendChild(particle);
-    }
-}
-
-/**
- * Gestion des erreurs d'images
- */
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('error', function() {
-            this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgdmlld0JveD0iMCAwIDM1MCAzNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzNTAiIGhlaWdodD0iMzUwIiBmaWxsPSIjNkM2M0ZGIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8cGF0aCBkPSJNMTc1IDExMEMxOTMuMzc3IDExMCAyMDggOTUuMzc3MiAyMDggNzdDMjA4IDU4LjYyMjggMTkzLjM3NyA0NCAxNzUgNDRDMTU2LjYyMyA0NCAxNDIgNTguNjIyOCAxNDIgNzdDMTQyIDk1LjM3NzIgMTU2LjYyMyAxMTAgMTc1IDExMFoiIGZpbGw9IiM2QzYzRkYiLz4KPHBhdGggZD0iTTE0MiAxNTRDMTA3LjY0MiAxNTQgODAgMTgxLjY0MiA4MCAyMTZWMTU0SDE0MloiIGZpbGw9IiM2QzYzRkYiLz4KPHBhdGggZD0iTTI3MCAxNTRWMjE2QzI3MCAxODEuNjQyIDI0Mi4zNTggMTU0IDIwOCAxNTRIMjc0WiIgZmlsbD0iIzZDNjNGRiIvPgo8L3N2Zz4K';
-            this.alt = 'Image non disponible';
+            );
         });
     });
-});
 
-/**
- * Optimisations après chargement complet
- */
-window.addEventListener('load', function() {
-    // Mesure des performances
-    const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-    console.log(`⏱️ Temps de chargement: ${loadTime}ms`);
-    
-    // Classe pour les animations de fin de chargement
-    document.body.classList.add('loaded');
-    
-    // Fallback pour les navigateurs sans IntersectionObserver
-    if (!('IntersectionObserver' in window)) {
-        setTimeout(() => {
-            const stats = document.querySelectorAll('.stat-number');
-            stats.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-count'));
-                stat.textContent = target;
-            });
-            
-            const skillItems = document.querySelectorAll('.skill-item');
-            skillItems.forEach(item => {
-                const skillLevel = item.getAttribute('data-skill');
-                const progressBar = item.querySelector('.skill-progress');
-                progressBar.style.width = `${skillLevel}%`;
-            });
-        }, 1000);
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light');
+    });
+
+    function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        if (btn) swapIcon(btn, theme === 'dark' ? 'sun' : 'moon');
     }
-});
+}
 
-/**
- * Gestionnaire d'erreurs global
- */
-window.addEventListener('error', function(e) {
-    console.error('❌ Erreur JavaScript:', e.error);
-});
+/* ------------  i18n FR ⇄ EN. FR text is snapshotted on load (dataset.i18nFr)  ------------ */
+function initLanguage() {
+    const btn = document.getElementById('lang-toggle');
+    const label = btn?.querySelector('.lang-label');
 
-// Export des fonctions pour utilisation globale (si nécessaire)
-window.Portfolio = {
-    initThemeSwitcher,
-    initNavigation,
-    initScrollEffects,
-    initAnimations,
-    initPortfolioCarousel,
-    initContactForm,
-    initStatistics,
-    initSkillsAnimation,
-    createParticles
-};
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+        el.dataset.i18nFr = el.textContent.trim();
+    });
+
+    const stored = localStorage.getItem('lang');
+    const initial = stored === 'en' ? 'en' : 'fr';
+    applyLang(initial);
+
+    btn?.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('lang') || 'fr';
+        const next = current === 'fr' ? 'en' : 'fr';
+        localStorage.setItem('lang', next);
+        applyLang(next);
+    });
+
+    function applyLang(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
+            const key = el.dataset.i18n;
+            const translation = lang === 'fr'
+                ? el.dataset.i18nFr
+                : (I18N.en[key] || el.dataset.i18nFr);
+            if (translation) el.textContent = translation;
+        });
+        if (label) label.textContent = lang === 'fr' ? 'FR' : 'EN';
+        if (btn) btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+    }
+}
+
+/* ------------  Mobile burger menu : open/close + icon swap (menu ↔ x)  ------------ */
+function initNav() {
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (!toggle || !links) return;
+
+    toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        swapIcon(toggle, open ? 'x' : 'menu');
+    });
+
+    links.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', () => {
+            if (links.classList.contains('open')) {
+                links.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                swapIcon(toggle, 'menu');
+            }
+        });
+    });
+}
+
+/* ------------  Highlight nav link of the currently visible section  ------------ */
+function initScrollSpy() {
+    const sections = document.querySelectorAll('main section[id]');
+    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+    if (!sections.length || !links.length) return;
+
+    const map = new Map();
+    links.forEach((a) => map.set(a.getAttribute('href').slice(1), a));
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    links.forEach((a) => a.classList.remove('active'));
+                    map.get(entry.target.id)?.classList.add('active');
+                }
+            });
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+    );
+    sections.forEach((s) => observer.observe(s));
+}
+
+/* ------------  Fade-in + slide-up of sections on scroll (skipped if reduced-motion)  ------------ */
+function initReveal() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const targets = document.querySelectorAll(
+        '.section-head, .stack-group, .service-card, .cert-card, .timeline-item, .projects-empty, .contact-form, .contact-list'
+    );
+    targets.forEach((el) => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    targets.forEach((el) => observer.observe(el));
+}
+
+/* ------------  Back-to-top button (visible past 400px) + sticky header "scrolled" state  ------------ */
+function initBackToTop() {
+    const btn = document.querySelector('.back-to-top');
+    const header = document.querySelector('.site-header');
+    const onScroll = () => {
+        if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        if (header) header.classList.toggle('scrolled', window.scrollY > 4);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+}
+
+/* ------------  Contact form : POST to Web3Forms + validation + toast feedback  ------------ */
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        if (!data.name?.trim() || !data.topic?.trim() || !data.message?.trim()) {
+            return toast('Tous les champs sont requis.', 'error');
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email || '')) {
+            return toast('Adresse email invalide.', 'error');
+        }
+        if (data.access_key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+            return toast("Web3Forms n'est pas encore configuré. Renseignez votre clé.", 'error');
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi…';
+
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: formData,
+            });
+            const json = await res.json();
+            if (res.ok && json.success) {
+                toast('Message envoyé, je vous réponds sous 48 h.', 'success');
+                form.reset();
+            } else {
+                toast(json.message || "L'envoi a échoué. Réessayez plus tard.", 'error');
+            }
+        } catch {
+            toast('Connexion impossible. Vérifiez votre réseau.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+        }
+    });
+}
+
+/* ------------  Inject the current year into the footer (#current-year)  ------------ */
+function initFooterYear() {
+    const el = document.getElementById('current-year');
+    if (el) el.textContent = new Date().getFullYear();
+}
+
+/* ------------  Magnetic effect : hero primary button gently follows the cursor within 80px  ------------ */
+function initMagneticCta() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    const targets = document.querySelectorAll('.hero .btn-primary');
+    const strength = 0.18;
+    const reach = 80;
+
+    targets.forEach((btn) => {
+        let raf;
+        const onMove = (e) => {
+            const r = btn.getBoundingClientRect();
+            const cx = r.left + r.width / 2;
+            const cy = r.top + r.height / 2;
+            const dx = e.clientX - cx;
+            const dy = e.clientY - cy;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist > reach) {
+                cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(() => { btn.style.transform = ''; });
+                return;
+            }
+            const factor = (1 - dist / reach) * strength;
+            cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                btn.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
+            });
+        };
+        const reset = () => { btn.style.transform = ''; };
+
+        window.addEventListener('mousemove', onMove, { passive: true });
+        btn.addEventListener('mouseleave', reset);
+    });
+}
+
+/* ------------  Hero shrink-on-scroll fallback for browsers without animation-timeline  ------------ */
+function initHeroScroll() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (CSS.supports('animation-timeline: scroll()')) return;
+
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    hero.dataset.shrink = '';
+
+    let raf;
+    const update = () => {
+        const max = window.innerHeight * 0.7;
+        const progress = Math.min(1, Math.max(0, window.scrollY / max));
+        hero.style.setProperty('--shrink-y', progress.toFixed(3));
+    };
+    const onScroll = () => {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+}
+
+/* ====================  HELPERS  ==================== */
+
+/* ------------  Swap an icon inside a container (inline SVG or Lucide name)  ------------ */
+function swapIcon(container, name) {
+    if (INLINE_ICONS[name]) {
+        const label = container.querySelector('.lang-label');
+        container.innerHTML = INLINE_ICONS[name] + (label ? label.outerHTML : '');
+        return;
+    }
+    container.innerHTML = `<i data-lucide="${name}" aria-hidden="true"></i>`;
+    renderIcons(container);
+}
+
+/* ------------  Show a transient toast (auto-removes after 4 s)  ------------ */
+function toast(message, variant = 'success') {
+    document.querySelectorAll('.toast').forEach((n) => n.remove());
+    const el = document.createElement('div');
+    el.className = `toast toast--${variant}`;
+    el.textContent = message;
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+}
