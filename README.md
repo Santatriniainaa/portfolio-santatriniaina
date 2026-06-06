@@ -68,8 +68,6 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 | **2021 — 2024** | Licence en Électronique | ESPA — Antananarivo |
 | **2017 — 2018** | Baccalauréat Série C | Lycée Saint Pierre Canisius — Ambohipo |
 
-> **Bac Série C** — Filière scientifique à dominante mathématiques et physique-chimie, voie d'accès aux grandes écoles d'ingénieurs malgaches.
-
 ---
 
 ## Formations techniques
