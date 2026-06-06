@@ -64,8 +64,8 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 | Période | Diplôme | Établissement |
 |---|---|---|
-| **2024 — aujourd'hui** | Master en Électronique *(en cours)* | ESPA — Antananarivo |
-| **2021 — 2024** | Licence en Électronique | ESPA — Antananarivo |
+| **2024 — aujourd'hui** | Master en Électronique *(en cours)* | Ecole Superieure Polytechnique d'Antananarivo — Antananarivo |
+| **2021 — 2024** | Licence en Électronique | Ecole Superieure Polytechnique d'Antananarivo — Antananarivo |
 | **2017 — 2018** | Baccalauréat Série C | Lycée Saint Pierre Canisius — Ambohipo |
 
 ---
