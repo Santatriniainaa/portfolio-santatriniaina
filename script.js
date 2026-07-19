@@ -18,8 +18,8 @@ const I18N = {
         'nav.services': 'Services',
         'nav.contact': 'Contact',
 
-        'hero.eyebrow': 'Antananarivo, Madagascar — available',
-        'hero.role': 'Electronics engineering student · Full-stack developer',
+        'hero.eyebrow': 'Available | Antananarivo, Madagascar',
+        'hero.role': 'Lorem Ipsum · Lorem Ipsum · Full Stack developer',
         'hero.lede': 'I design IoT systems and web applications, from board to cloud. Currently pursuing my Master at ESPA (Antananarivo).',
         'hero.downloadCv': 'Download my CV',
         'hero.contactMe': 'Contact me',
