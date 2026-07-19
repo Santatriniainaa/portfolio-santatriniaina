@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/cv-santatriniaina.pdf
+Disallow: /assets/RAZAFINDRAKOTOSantatriniaina-portfolio-cv.pdf
 
 Sitemap: https://santatriniainaa.github.io/portfolio-santatriniaina/sitemap.xml
