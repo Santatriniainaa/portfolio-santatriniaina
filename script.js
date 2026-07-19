@@ -44,7 +44,7 @@ const I18N = {
 
         'stack.label': '02 — Tech stack',
         'stack.title': 'Tools and technologies I use daily.',
-        'stack.frontend': 'Frontend',
+        'stack.language': 'Language',
         'stack.backend': 'Backend',
         'stack.ai': 'Artificial Intelligence',
         'stack.iot': 'Electronics & IoT',
