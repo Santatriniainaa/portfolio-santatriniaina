@@ -104,6 +104,8 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-h);
     -webkit-text-size-adjust: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
 }
 
 body {
@@ -116,11 +118,6 @@ body {
     text-rendering: optimizeLegibility;
 
     transition: background-color var(--dur-base) var(--ease-snap), color var(--dur-base) var(--ease-snap);
-}
-
-html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) transparent;
 }
 
 html::-webkit-scrollbar {
@@ -283,14 +280,6 @@ h2, h3, h4 { text-wrap: balance; }
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: var(--space-3);
-}
-
-/* ====================  ABOUT  ==================== */
-
-.section-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: var(--space-8);
 }
 
 /* ====================  HEADER & NAVIGATION  ==================== */
@@ -816,7 +805,13 @@ h2, h3, h4 { text-wrap: balance; }
 
 .hero-portrait:hover img { transform: scale(1.03); }
 
-/* ====================  ABOUT  ==================== */
+/* ====================  01 - ABOUT  ==================== */
+
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--space-8);
+} 
 
 .about-body p {
     color: var(--text-muted);
@@ -849,7 +844,7 @@ h2, h3, h4 { text-wrap: balance; }
     font-weight: 500;
 }
 
-/* ====================  STACK  ==================== */
+/* ====================  02 - STACK  ==================== */
 
 .stack-grid {
     display: grid;
@@ -947,33 +942,7 @@ h2, h3, h4 { text-wrap: balance; }
 .stack-grid > .reveal,
 .cert-grid > .reveal,
 
-/* ====================  SERVICES  ==================== */
-
-.services-grid > .reveal,
-.timeline > .reveal {
-    transition-delay: 0ms;
-}
-
-.stack-grid > .reveal:nth-child(2),
-.cert-grid > .reveal:nth-child(2),
-.services-grid > .reveal:nth-child(2),
-.timeline > .reveal:nth-child(2) { transition-delay: 80ms; }
-
-.stack-grid > .reveal:nth-child(3),
-.cert-grid > .reveal:nth-child(3),
-.services-grid > .reveal:nth-child(3),
-.timeline > .reveal:nth-child(3) { transition-delay: 160ms; }
-
-.stack-grid > .reveal:nth-child(4),
-.timeline > .reveal:nth-child(4) { transition-delay: 240ms; }
-
-.stack-grid > .reveal:nth-child(5),
-.timeline > .reveal:nth-child(5) { transition-delay: 320ms; }
-
-.stack-grid > .reveal:nth-child(6),
-.timeline > .reveal:nth-child(6) { transition-delay: 400ms; }
-
-/* ====================  PROJECTS  ==================== */
+/* ====================  03 - PROJECTS  ==================== */
 
 .projects-empty {
     border: 1px dashed var(--border);
@@ -988,7 +957,7 @@ h2, h3, h4 { text-wrap: balance; }
     margin: 0 auto var(--space-5);
 }
 
-/* ====================  EDUCATION & CERTIFICATIONS  ==================== */
+/* ====================  04 - EDUCATION & CERTIFICATIONS  ==================== */
 
 .subsection { margin-bottom: var(--space-8); }
 
@@ -1270,7 +1239,33 @@ h2, h3, h4 { text-wrap: balance; }
 
 .service-card ul li:first-child { border-top: 0; }
 
-/* ====================  CONTACT  ==================== */
+/* ====================  05 - SERVICES  ==================== */
+
+.services-grid > .reveal,
+.timeline > .reveal {
+    transition-delay: 0ms;
+}
+
+.stack-grid > .reveal:nth-child(2),
+.cert-grid > .reveal:nth-child(2),
+.services-grid > .reveal:nth-child(2),
+.timeline > .reveal:nth-child(2) { transition-delay: 80ms; }
+
+.stack-grid > .reveal:nth-child(3),
+.cert-grid > .reveal:nth-child(3),
+.services-grid > .reveal:nth-child(3),
+.timeline > .reveal:nth-child(3) { transition-delay: 160ms; }
+
+.stack-grid > .reveal:nth-child(4),
+.timeline > .reveal:nth-child(4) { transition-delay: 240ms; }
+
+.stack-grid > .reveal:nth-child(5),
+.timeline > .reveal:nth-child(5) { transition-delay: 320ms; }
+
+.stack-grid > .reveal:nth-child(6),
+.timeline > .reveal:nth-child(6) { transition-delay: 400ms; }
+
+/* ====================  06 - CONTACT  ==================== */
 
 .contact-intro {
     color: var(--text-muted);
