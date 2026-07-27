@@ -39,6 +39,9 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 ### Développements
 ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black)
+![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visualstudiocode&logoColor=white)
+![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=postman&logoColor=white)
+![Grafana](https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)
 
 ### Managements
