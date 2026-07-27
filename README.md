@@ -33,7 +33,9 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 ### Gestion base de données 
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/-SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
+![SQLite](https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white)
 
 ### Développements
 ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black)
