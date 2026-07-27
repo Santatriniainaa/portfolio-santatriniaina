@@ -99,7 +99,7 @@ const I18N = {
         'form.send': 'Send',
         'form.note': 'Your data stays confidential, never shared.',
 
-        'footer.role': 'Electronics engineer & full-stack developer',
+        'footer.role': 'Electronics engineer & Full-Stack developer - IoT - DevOps',
         'footer.location': 'Antananarivo, Madagascar',
         'footer.nav': 'Navigation',
         'footer.reach': 'Reach out',
