@@ -38,9 +38,9 @@ const I18N = {
         'about.location': 'Location',
         'about.locationValue': 'Antananarivo, Madagascar',
         'about.availability': 'Availability',
-        'about.availabilityValue': 'Freelance & full-time',
+        'about.availabilityValue': 'Mission & CDD',
         'about.languages': 'Languages',
-        'about.languagesValue': 'French · Malagasy · Technical English',
+        'about.languagesValue': 'Malagasy · French · Technical English',
 
         'stack.label': '02 — Tech stack',
         'stack.title': 'Tools and technologies I use daily.',
