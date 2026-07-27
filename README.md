@@ -63,7 +63,7 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 ### Électronique & IoT
 ![Arduino](https://img.shields.io/badge/-Arduino-00979D?logo=arduino&logoColor=white)
 ![ESP32](https://img.shields.io/badge/-ESP32-E7352C)
-![KiCad](https://img.shields.io/badge/-KiCad-314CB0?logo=kicad&logoColor=white)
+![KiCad](https://img.shields.io/badge/-KiCad-314CB6?logo=kicad&logoColor=white)
 ![Proteus](https://img.shields.io/badge/-Proteus-FF6B6B)
 
 ### Autres
@@ -96,8 +96,8 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 | Service | Description |
 |---|---|
-| **Développement Full Stack** | Applications complètes Angular + Spring Boot / FastAPI + SQL/NoSQL |
-| **IoT & Systèmes embarqués** | Prototypage Arduino / ESP32 / Raspberry Pi, capteurs, MQTT, intégration cloud |
+| **Développement Full Stack** | Applications complètes Angular (web, pwa) + Spring Boot / FastAPI + SQL/NoSQL |
+| **IoT & Systèmes embarqués** | Prototypage Arduino / ESP32 , capteurs, MQTT, Dashboard|
 | **Cloud & DevOps** | Pipelines CI/CD, Docker, administration Linux |
 
 ---
