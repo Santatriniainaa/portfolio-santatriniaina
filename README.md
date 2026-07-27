@@ -96,8 +96,8 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 | Service | Description |
 |---|---|
-| **Développement Full Stack** | Applications complètes Angular + Spring Boot / FastAPI + SQL/NoSQL |
-| **IoT & Systèmes embarqués** | Prototypage Arduino / ESP32 / Raspberry Pi, capteurs, MQTT, intégration cloud |
+| **Développement Full Stack** | Applications complètes Angular (web, pwa) + Spring Boot / FastAPI + SQL/NoSQL |
+| **IoT & Systèmes embarqués** | Prototypage Arduino / ESP32 , capteurs, MQTT, Dashboard|
 | **Cloud & DevOps** | Pipelines CI/CD, Docker, administration Linux |
 
 ---
