@@ -57,6 +57,7 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 ![Blender](https://img.shields.io/badge/-Blender-F5792A?logo=blender&logoColor=white)
 
 ### Intelligence Artificielle
+![Claude](https://img.shields.io/badge/-Claude-D97757?logo=anthropic&logoColor=white)
 
 
 ### Électronique & IoT
@@ -66,7 +67,10 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 ![Proteus](https://img.shields.io/badge/-Proteus-FF6B6B)
 
 ### Autres
-![REST](https://img.shields.io/badge/-REST%20API-005571)
+![Scrum](https://img.shields.io/badge/-Scrum-6DB33F?logo=scrumalliance&logoColor=white)
+![Kanban](https://img.shields.io/badge/-Kanban-0052CC?logo=trello&logoColor=white)
+![UX/UI](https://img.shields.io/badge/-UX%2FUI-FF4088?logo=figma&logoColor=white)
+![REST API](https://img.shields.io/badge/-REST%20API-009688?logo=fastapi&logoColor=white)
 
 ---
 
