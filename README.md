@@ -13,7 +13,7 @@
 
 ## À propos
 
-Diplômé d'une Licence en Électronique à l'**ESPA** (École Supérieure Polytechnique d'Antananarivo) et **actuellement en Master**, je travaille à l'intersection du matériel embarqué et des plateformes logicielles modernes.
+Diplômé d'une Licence en Électronique à l' École Supérieure Polytechnique d'Antananarivo et **actuellement en Master II**, je travaille à l'intersection du matériel embarqué et des plateformes logicielles modernes.
 
 Je conçois des solutions complètes : du prototype électronique (ESP32, capteurs, MQTT) au backend Java Spring Boot / Python FastAPI, en passant par l'interface Angular et le déploiement Docker / Linux.
 
@@ -43,7 +43,6 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 ### Électronique & IoT
 ![Arduino](https://img.shields.io/badge/-Arduino-00979D?logo=arduino&logoColor=white)
 ![ESP32](https://img.shields.io/badge/-ESP32-E7352C)
-![Raspberry Pi](https://img.shields.io/badge/-Raspberry%20Pi-A22846?logo=raspberrypi&logoColor=white)
 ![C++](https://img.shields.io/badge/-C%2B%2B-00599C?logo=cplusplus&logoColor=white)
 ![KiCad](https://img.shields.io/badge/-KiCad-314CB0?logo=kicad&logoColor=white)
 ![Proteus](https://img.shields.io/badge/-Proteus-FF6B6B)
@@ -64,7 +63,7 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 | Période | Diplôme | Établissement |
 |---|---|---|
-| **2024 — aujourd'hui** | Master en Électronique *(en cours)* | École Supérieure Polytechnique d'Antananarivo — Antananarivo |
+| **2024 — aujourd'hui** | Master II en Électronique *(en cours)* | École Supérieure Polytechnique d'Antananarivo — Antananarivo |
 | **2021 — 2024** | Licence en Électronique | École Supérieure Polytechnique d'Antananarivo — Antananarivo |
 | **2017 — 2018** | Baccalauréat Série C | Lycée Saint Pierre Canisius — Ambohipo |
 
@@ -72,8 +71,8 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 ## Formations techniques
 
-- **Linux Essentials** — LPI *(certifié)*
-- **Cloud & DevOps** — CODEKO *(en cours)*
+- **Linux Essentials** — LPI *(en cours)*
+- **Cloud & DevOps** — CODEKO *(certifié)*
 - **Spring Boot** — Apprentissage autodidacte
 
 ---
@@ -98,7 +97,7 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 | 📘 Facebook | [santatra.ny.aina](https://www.facebook.com/santatra.ny.aina.589892/) |
 | 📍 Localisation | Antananarivo, Madagascar |
 
-> **Disponible** pour des missions IoT, full-stack ou DevOps · Réponse sous 48 h ouvrées.
+> **Disponible** pour des missions IoT, Full-Stack ou DevOps · Réponse sous 48 h ouvrées.
 
 ---
 
