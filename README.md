@@ -1,6 +1,6 @@
 # RAZAFINDRAKOTO Santatriniaina
 
-> Étudiant ingénieur en électronique · Développeur full stack
+> Étudiant ingénieur en électronique · Développeur Full Stack · IoT · DevOps
 > Antananarivo, Madagascar
 
 [![GitHub](https://img.shields.io/badge/GitHub-Santatriniainaa-181717?logo=github&logoColor=white)](https://github.com/Santatriniainaa)
