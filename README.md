@@ -33,21 +33,31 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 ### Gestion base de données 
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?logo=mysql&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/-SQL%20Server-CC2927?logo=microsoftsqlserver&logoColor=white)
+![SQLite](https://img.shields.io/badge/-SQLite-003B57?logo=sqlite&logoColor=white)
 
 ### Développements
 ![Linux](https://img.shields.io/badge/-Linux-FCC624?logo=linux&logoColor=black)
+![VS Code](https://img.shields.io/badge/-VS%20Code-007ACC?logo=visualstudiocode&logoColor=white)
+![Postman](https://img.shields.io/badge/-Postman-FF6C37?logo=postman&logoColor=white)
+![Grafana](https://img.shields.io/badge/-Grafana-F46800?logo=grafana&logoColor=white)
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)
 
 ### Managements
 ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white)
+![Bitbucket](https://img.shields.io/badge/-Bitbucket-0052CC?logo=bitbucket&logoColor=white)
+![GitLab](https://img.shields.io/badge/-GitLab-FC6D26?logo=gitlab&logoColor=white)
 ![Jira](https://img.shields.io/badge/-Jira-0052CC?logo=jira&logoColor=white)
 
 ### Design
-
+![Adobe Illustrator](https://img.shields.io/badge/-Adobe%20Illustrator-FF9A00?logo=adobeillustrator&logoColor=white)
+![Canva](https://img.shields.io/badge/-Canva-00C4CC?logo=canva&logoColor=white)
+![Blender](https://img.shields.io/badge/-Blender-F5792A?logo=blender&logoColor=white)
 
 ### Intelligence Artificielle
+![Claude](https://img.shields.io/badge/-Claude-D97757?logo=anthropic&logoColor=white)
 
 
 ### Électronique & IoT
@@ -57,7 +67,10 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 ![Proteus](https://img.shields.io/badge/-Proteus-FF6B6B)
 
 ### Autres
-![REST](https://img.shields.io/badge/-REST%20API-005571)
+![Scrum](https://img.shields.io/badge/-Scrum-6DB33F?logoColor=white)
+![Kanban](https://img.shields.io/badge/-Kanban-0052CC?logo=trello&logoColor=white)
+![UX/UI](https://img.shields.io/badge/-UX%2FUI-FF4088?logo=figma&logoColor=white)
+![REST API](https://img.shields.io/badge/-REST%20API-009688?logo=fastapi&logoColor=white)
 
 ---
 
