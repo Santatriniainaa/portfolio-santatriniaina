@@ -143,9 +143,11 @@ function renderIcons(root = document) {
 function initTheme() {
     const btn = document.getElementById('theme-toggle');
     const root = document.documentElement;
+    if (!root) return;
 
     const stored = localStorage.getItem('theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const systemDark = mediaQuery.matches;
     const initial = stored || (systemDark ? 'dark' : 'light');
     applyTheme(initial);
 
@@ -180,7 +182,7 @@ function initTheme() {
         });
     });
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    mediaQuery.addEventListener?.('change', (e) => {
         if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light');
     });
 
@@ -311,20 +313,26 @@ function initContactForm() {
     if (!form) return;
 
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalLabel = submitBtn.textContent;
+    if (!submitBtn) return;
+
+    const originalLabel = submitBtn.textContent.trim() || 'Envoyer';
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
+        const name = (data.name || '').trim();
+        const email = (data.email || '').trim();
+        const topic = (data.topic || '').trim();
+        const message = (data.message || '').trim();
 
-        if (!data.name?.trim() || !data.topic?.trim() || !data.message?.trim()) {
+        if (!name || !email || !topic || !message) {
             return toast('Tous les champs sont requis.', 'error');
         }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email || '')) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             return toast('Adresse email invalide.', 'error');
         }
-        if (data.access_key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+        if (data.access_key === '24f32e70-f207-469c-9bae-2613491778b6') {
             return toast("Web3Forms n'est pas encore configuré. Renseignez votre clé.", 'error');
         }
 
@@ -337,12 +345,20 @@ function initContactForm() {
                 headers: { Accept: 'application/json' },
                 body: formData,
             });
-            const json = await res.json();
+            const text = await res.text();
+            let json = {};
+
+            try {
+                json = text ? JSON.parse(text) : {};
+            } catch {
+                json = {};
+            }
+
             if (res.ok && json.success) {
                 toast('Message envoyé, je vous réponds sous 48 h.', 'success');
                 form.reset();
             } else {
-                toast(json.message || "L'envoi a échoué. Réessayez plus tard.", 'error');
+                toast(json.message || `L'envoi a échoué (${res.status || 'inconnu'}).`, 'error');
             }
         } catch {
             toast('Connexion impossible. Vérifiez votre réseau.', 'error');
@@ -437,6 +453,9 @@ function toast(message, variant = 'success') {
     document.querySelectorAll('.toast').forEach((n) => n.remove());
     const el = document.createElement('div');
     el.className = `toast toast--${variant}`;
+    el.setAttribute('role', 'status');
+    el.setAttribute('aria-live', 'polite');
+    el.setAttribute('aria-atomic', 'true');
     el.textContent = message;
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 4000);
