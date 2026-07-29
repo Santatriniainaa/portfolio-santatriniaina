@@ -332,7 +332,7 @@ function initContactForm() {
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             return toast('Adresse email invalide.', 'error');
         }
-        if (data.access_key === '24f32e70-f207-469c-9bae-2613491778b6') {
+        if (data.access_key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
             return toast("Web3Forms n'est pas encore configuré. Renseignez votre clé.", 'error');
         }
 
