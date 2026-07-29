@@ -518,7 +518,7 @@ h2, h3, h4 { text-wrap: balance; }
 /* ====================  HERO  ==================== */
 
 .hero {
-    padding: var(--space-7) 0 var(--space-5);
+    padding: var(--space-5) 0 var(--space-5);
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -544,8 +544,8 @@ h2, h3, h4 { text-wrap: balance; }
     inset: 0;
     z-index: -2;
     background:
-        radial-gradient(800px 500px at 88% 18%, var(--accent-soft), transparent 60%),
-        radial-gradient(700px 400px at 5% 95%, var(--accent-soft), transparent 55%);
+        radial-gradient(800px 500px at 88% 18%, var(--accent), transparent 60%),
+        radial-gradient(700px 400px at 5% 95%, var(--accent), transparent 55%);
     pointer-events: none;
 }
 
