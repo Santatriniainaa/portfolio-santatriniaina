@@ -333,7 +333,7 @@ function initContactForm() {
             return toast('Adresse email invalide.', 'error');
         }
         if (data.access_key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-            return toast("Web3Forms n'est pas encore configuré. Renseignez votre clé.", 'error');
+            return toast("Erreur de configuration de formulaire", 'error');
         }
 
         submitBtn.disabled = true;
