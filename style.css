@@ -100,6 +100,24 @@
 
 [data-theme="dark"] .hero::after { opacity: 0.7; }
 
+[data-theme="dark"] .stack-group,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .contact-side,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .projects-empty,
+[data-theme="dark"] .channel,
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field textarea,
+[data-theme="dark"] .toast {
+    background: var(--surface-elevated);
+}
+
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field textarea {
+    border-color: var(--border-strong);
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--nav-h);
@@ -544,8 +562,8 @@ h2, h3, h4 { text-wrap: balance; }
     inset: 0;
     z-index: -2;
     background:
-        radial-gradient(800px 500px at 88% 18%, var(--accent), transparent 60%),
-        radial-gradient(700px 400px at 5% 95%, var(--accent), transparent 55%);
+        radial-gradient(800px 500px at 88% 18%, var(--accent-soft), transparent 60%),
+        radial-gradient(700px 400px at 5% 95%, var(--accent-soft), transparent 55%);
     pointer-events: none;
 }
 
@@ -846,6 +864,16 @@ h2, h3, h4 { text-wrap: balance; }
 
 /* ====================  02 - STACK  ==================== */
 
+.stack-group,
+.cert-card,
+.service-card,
+.contact-side,
+.contact-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
 .stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -856,9 +884,6 @@ h2, h3, h4 { text-wrap: balance; }
 .stack-group {
     position: relative;
     padding: var(--space-5);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
     transition:
         border-color var(--dur-base) var(--ease-snap),
         transform var(--dur-base) var(--ease-out),
@@ -990,9 +1015,6 @@ h2, h3, h4 { text-wrap: balance; }
 
 .cert-card {
     padding: var(--space-5);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
@@ -1187,9 +1209,6 @@ h2, h3, h4 { text-wrap: balance; }
 .service-card {
     position: relative;
     padding: var(--space-6);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
     transition:
         border-color var(--dur-base) var(--ease-snap),
         transform var(--dur-base) var(--ease-out),
@@ -1283,9 +1302,6 @@ h2, h3, h4 { text-wrap: balance; }
 
 .contact-side {
     padding: var(--space-6);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
@@ -1490,9 +1506,6 @@ h2, h3, h4 { text-wrap: balance; }
 
 .contact-form {
     padding: var(--space-6);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    background: var(--surface);
     box-shadow: var(--shadow-2);
     display: flex;
     flex-direction: column;
