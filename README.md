@@ -1,7 +1,6 @@
 # RAZAFINDRAKOTO Santatriniaina
 
-> Étudiant ingénieur en électronique · Développeur Full Stack · IoT · DevOps
-> Antananarivo, Madagascar
+> Étudiant ingénieur en électronique · Antananarivo, Madagascar
 
 [![GitHub](https://img.shields.io/badge/GitHub-Santatriniainaa-181717?logo=github&logoColor=white)](https://github.com/Santatriniainaa)
 [![Facebook](https://img.shields.io/badge/Facebook-Profile-1877F2?logo=facebook&logoColor=white)](https://www.facebook.com/santatra.ny.aina.589892/)
@@ -13,7 +12,7 @@
 
 ## À propos
 
-Diplômé d'une Licence en Électronique à l' École Supérieure Polytechnique d'Antananarivo et **actuellement en Master II**, je travaille à l'intersection du matériel embarqué et des plateformes logicielles modernes.
+Actuellement en fin de **Master II en Électronique** à l’École Supérieure Polytechnique d’Antananarivo, après y avoir obtenu une Licence en Électronique, je travaille à l’intersection du matériel embarqué et des plateformes logicielles modernes.
 
 Je conçois des solutions complètes : du prototype électronique (ESP32, capteurs, MQTT) au backend Java Spring Boot / Python FastAPI, en passant par l'interface Angular et le déploiement Docker / Linux.
 
@@ -78,9 +77,9 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 | Période | Diplôme | Établissement |
 |---|---|---|
-| **2024 — aujourd'hui** | Master II en Électronique *(en cours)* | École Supérieure Polytechnique d'Antananarivo — Antananarivo |
-| **2021 — 2024** | Licence en Électronique | École Supérieure Polytechnique d'Antananarivo — Antananarivo |
-| **2017 — 2018** | Baccalauréat Série C | Lycée Saint Pierre Canisius — Ambohipo |
+| **2024 — aujourd'hui** | Master II en Électronique *(en cours)* | École Supérieure Polytechnique d'Antananarivo |
+| **2021 — 2024** | Licence en Électronique | École Supérieure Polytechnique d'Antananarivo |
+| **2017 — 2018** | Baccalauréat Série C | Lycée Saint Pierre Canisius Ambohipo |
 
 ---
 
@@ -96,7 +95,7 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 
 | Service | Description |
 |---|---|
-| **Développement Full Stack** | Applications complètes Angular (web, pwa) + Spring Boot / FastAPI + SQL/NoSQL |
+| **Développement Full Stack** | Applications complètes , API , Backend , Frontend |
 | **IoT & Systèmes embarqués** | Prototypage Arduino / ESP32 , capteurs, MQTT, Dashboard|
 | **Cloud & DevOps** | Pipelines CI/CD, Docker, administration Linux |
 
@@ -111,14 +110,6 @@ Je conçois des solutions complètes : du prototype électronique (ESP32, capteu
 | 🌐 GitHub | [@Santatriniainaa](https://github.com/Santatriniainaa) |
 | 📘 Facebook | [santatra.ny.aina](https://www.facebook.com/santatra.ny.aina.589892/) |
 | 📍 Localisation | Antananarivo, Madagascar |
-
-> **Disponible** pour des missions IoT, Full-Stack ou DevOps · Réponse sous 48 h ouvrées.
-
----
-
-## Licence
-
-Code source sous licence **MIT**. Le contenu (textes, photo, CV) reste la propriété de RAZAFINDRAKOTO Santatriniaina.
 
 ---
 
