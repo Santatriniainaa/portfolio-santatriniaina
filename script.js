@@ -11,6 +11,22 @@ const INLINE_ICONS = {
 /* ------------  i18n dictionary (FR is the source, EN is the translation)  ------------ */
 const I18N = {
     en: {
+        'meta.title': 'RAZAFINDRAKOTO Santatriniaina — Student',
+        'meta.description': 'Portfolio of RAZAFINDRAKOTO Santatriniaina — Electronics student, Full Stack developer and IoT enthusiast in Antananarivo, Madagascar.',
+        'meta.descriptionShort': 'Electronics student, Full Stack developer and IoT enthusiast in Antananarivo, Madagascar.',
+        'meta.imageAlt': 'Portrait and portfolio of RAZAFINDRAKOTO Santatriniaina',
+        'meta.locale': 'en_US',
+        'a11y.skip': 'Skip to content',
+        'a11y.primaryNav': 'Main navigation',
+        'a11y.changeLanguage': 'Change language',
+        'a11y.changeTheme': 'Change theme',
+        'a11y.openMenu': 'Open menu',
+        'a11y.closeMenu': 'Close menu',
+        'a11y.portraitAlt': 'Portrait of RAZAFINDRAKOTO Santatriniaina',
+        'a11y.scrollCue': 'Scroll to the next section',
+        'a11y.backToTop': 'Back to top',
+        'a11y.quickContact': 'Quick contact',
+
         'nav.about': 'About',
         'nav.stack': 'Stack',
         'nav.projects': 'Projects',
@@ -18,9 +34,9 @@ const I18N = {
         'nav.services': 'Services',
         'nav.contact': 'Contact',
 
-        'hero.eyebrow': 'Available | Antananarivo, Madagascar',
-        'hero.role': 'Full Stack Developer · IoT · DevOps',
-        'hero.lede': 'I design web, mobile, and connected solutions that blend performance, quality, and user experience. I pay particular attention to software architecture, maintainability, and technological innovation.',
+        'hero.eyebrow': 'Antananarivo · Madagascar',
+        'hero.role': 'Electronics student · Full Stack Developer',
+        'hero.lede': 'I build applications and connected solutions by combining electronics, software development, and IoT technologies. I am also interested in automation and deployment with Linux and DevOps.',
         'hero.downloadCv': 'Download CV',
         'hero.contactMe': 'Contact me',
         'hero.fact.education': 'Education',
@@ -38,7 +54,7 @@ const I18N = {
         'about.location': 'Location',
         'about.locationValue': 'Antananarivo, Madagascar',
         'about.availability': 'Availability',
-        'about.availabilityValue': 'Internships & fixed-term contracts',
+        'about.availabilityValue': 'Internship',
         'about.languages': 'Languages',
         'about.languagesValue': 'Malagasy · French · English',
 
@@ -53,6 +69,8 @@ const I18N = {
         'stack.electronics': 'Electronics & IoT',
         'stack.ai': 'Artificial Intelligence',
         'stack.other': 'Other tools',
+        'stack.sensor': 'Sensor',
+        'stack.agile': 'Agile methods (Scrum, Kanban)',
 
         'projects.label': '03 — Projects',
         'projects.title': 'Selected work.',
@@ -66,25 +84,45 @@ const I18N = {
         'education.tech': 'Technical training',
         'education.techSub': 'Certifications and specialized learning.',
         'edu.master.date': '2024 — present (in progress)',
+        'edu.master.level': "Master's degree",
         'edu.master.title': "Master's in Electronics",
         'edu.master.desc': 'Training combining electronics and computer science, with hands-on learning in software development, embedded systems, databases, networks, and IoT to design solutions for real-world challenges.',
         'edu.licence.title': "Bachelor's in Electronics",
+        'edu.licence.level': "Bachelor's degree",
         'edu.licence.desc': 'A three-year program focused on electronics, computer science, and digital technologies, with a practical approach based on design, programming, and embedded systems projects.',
         'edu.bac.title': 'High School Diploma — Science Track (Series C)',
-        'edu.bac.desc': 'A general scientific curriculum focused on mathematics and physics, developing strong skills in logic, analysis, and problem-solving.',
+        'edu.bac.level': 'High school diploma',
+        'edu.bac.desc': 'General science education.',
+
+        'cert.status.progress': 'In progress',
+        'cert.status.done': 'Certified',
+        'cert.status.self': 'Self-taught',
+        'cert.linux.desc': 'Learning Linux fundamentals: essential commands, file system navigation, user management, and monitoring processes and services.',
+        'cert.cloud.desc': 'Introduction to Cloud and DevOps practices: deployment automation, CI/CD pipelines, containerization, and modern infrastructure management.',
+        'cert.self.org': 'Self-directed learning',
+        'cert.spring.desc': 'Building REST APIs with Spring Boot, from data persistence with JPA / Hibernate to testing, security, and code organization.',
 
         'services.label': '05 — Services',
         'services.title': 'What I can build for you.',
-        'services.fullstack': 'Full Stack Development',
-        'services.fullstackDesc': 'Design and development of complete responsive web and PWA applications.',
+        'services.fullstack': 'Development',
+        'services.fullstackDesc': 'Designing websites and web applications with responsive interfaces, useful features, and maintainable code tailored to your specific needs.',
+        'services.fullstack.item1': 'UX/UI with Angular & JavaFX',
+        'services.fullstack.item2': 'REST APIs with Spring Boot / FastAPI',
+        'services.fullstack.item3': 'Data with PostgreSQL / JSON',
         'services.iot': 'IoT & Embedded Systems',
-        'services.iotDesc': 'Connected solutions: electronic prototyping, microcontroller programming, and cloud integration.',
-        'services.devops': 'Cloud & DevOps',
-        'services.devopsDesc': 'Implementation of CI/CD pipelines, containerization, and deployment of reliable, automated infrastructures.',
+        'services.iotDesc': 'Development of connected solutions, from electronic prototyping to programming microcontrollers and secure integration with reliable cloud platforms.',
+        'services.iot.item1': 'Arduino, ESP32',
+        'services.iot.item2': 'Sensors, MQTT, Wi-Fi',
+        'services.iot.item3': 'IoT & cloud dashboards',
+        'services.devops': 'Architect Cloud & DevOps',
+        'services.devopsDesc': 'Automated application delivery using CI/CD pipelines, containers, and reliable, scalable Linux infrastructure that is easy to maintain.',
+        'services.devops.item1': 'Docker & containerization',
+        'services.devops.item2': 'CI/CD with GitLab / GitHub',
+        'services.devops.item3': 'Linux administration',
 
         'contact.label': '06 — Contact',
         'contact.title': "Let's discuss your project.",
-        'contact.intro': 'Available for IoT, Full Stack, or DevOps missions.',
+        'contact.intro': 'Available for projects.',
         'contact.email': 'Email',
         'contact.location': 'Location',
         'contact.locationValue': 'Antananarivo, Madagascar',
@@ -107,6 +145,29 @@ const I18N = {
         'footer.social': 'Socials',
         'footer.rights': 'All rights reserved.',
         'footer.built': 'Designed and developed with care in Antananarivo.',
+    },
+};
+
+const UI_TEXT = {
+    fr: {
+        'form.required': 'Tous les champs sont requis.',
+        'form.invalidEmail': 'Adresse email invalide.',
+        'form.configError': 'Erreur de configuration du formulaire.',
+        'form.sending': 'Envoi…',
+        'form.sent': 'Message envoyé, je vous réponds sous 48 h.',
+        'form.sendFailed': 'L’envoi a échoué',
+        'form.unknown': 'inconnu',
+        'form.connectionError': 'Connexion impossible. Vérifiez votre réseau.',
+    },
+    en: {
+        'form.required': 'All fields are required.',
+        'form.invalidEmail': 'Please enter a valid email address.',
+        'form.configError': 'Form configuration error.',
+        'form.sending': 'Sending…',
+        'form.sent': 'Message sent. I’ll get back to you within 48 hours.',
+        'form.sendFailed': 'Message could not be sent',
+        'form.unknown': 'unknown',
+        'form.connectionError': 'Unable to connect. Please check your network.',
     },
 };
 
@@ -200,6 +261,12 @@ function initLanguage() {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
         el.dataset.i18nFr = el.textContent.trim();
     });
+    document.querySelectorAll('[data-i18n-content], [data-i18n-aria-label], [data-i18n-alt]').forEach((el) => {
+        ['content', 'aria-label', 'alt'].forEach((attribute) => {
+            const key = el.dataset[`i18n${attribute[0].toUpperCase()}${attribute.slice(1)}`];
+            if (key) el.dataset[`i18n${attribute[0].toUpperCase()}${attribute.slice(1)}Fr`] = el.getAttribute(attribute);
+        });
+    });
 
     const stored = localStorage.getItem('lang');
     const initial = stored === 'en' ? 'en' : 'fr';
@@ -221,6 +288,25 @@ function initLanguage() {
                 : (I18N.en[key] || el.dataset.i18nFr);
             if (translation) el.textContent = translation;
         });
+        document.querySelectorAll('[data-i18n-content], [data-i18n-aria-label], [data-i18n-alt]').forEach((el) => {
+            ['content', 'aria-label', 'alt'].forEach((attribute) => {
+                const suffix = attribute[0].toUpperCase() + attribute.slice(1);
+                const key = el.dataset[`i18n${suffix}`];
+                if (!key) return;
+                const translation = lang === 'fr'
+                    ? el.dataset[`i18n${suffix}Fr`]
+                    : I18N.en[key] || el.dataset[`i18n${suffix}Fr`];
+                if (translation) el.setAttribute(attribute, translation);
+            });
+        });
+        const navToggle = document.getElementById('nav-toggle');
+        const menuIsOpen = document.querySelector('.nav-links')?.classList.contains('open');
+        if (navToggle) {
+            const menuLabel = menuIsOpen ? 'a11y.closeMenu' : 'a11y.openMenu';
+            navToggle.setAttribute('aria-label', lang === 'en'
+                ? I18N.en[menuLabel]
+                : (menuIsOpen ? 'Fermer le menu' : 'Ouvrir le menu'));
+        }
         if (label) label.textContent = lang === 'fr' ? 'FR' : 'EN';
         if (btn) btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
     }
@@ -235,6 +321,10 @@ function initNav() {
     toggle.addEventListener('click', () => {
         const open = links.classList.toggle('open');
         toggle.setAttribute('aria-expanded', String(open));
+        const lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
+        toggle.setAttribute('aria-label', open
+            ? (lang === 'en' ? I18N.en['a11y.closeMenu'] : 'Fermer le menu')
+            : (lang === 'en' ? I18N.en['a11y.openMenu'] : 'Ouvrir le menu'));
         swapIcon(toggle, open ? 'x' : 'menu');
     });
 
@@ -243,6 +333,8 @@ function initNav() {
             if (links.classList.contains('open')) {
                 links.classList.remove('open');
                 toggle.setAttribute('aria-expanded', 'false');
+                const lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
+                toggle.setAttribute('aria-label', lang === 'en' ? I18N.en['a11y.openMenu'] : 'Ouvrir le menu');
                 swapIcon(toggle, 'menu');
             }
         });
@@ -315,7 +407,7 @@ function initContactForm() {
     const submitBtn = form.querySelector('button[type="submit"]');
     if (!submitBtn) return;
 
-    const originalLabel = submitBtn.textContent.trim() || 'Envoyer';
+    const submitLabel = submitBtn.querySelector('[data-i18n="form.send"]');
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -325,19 +417,21 @@ function initContactForm() {
         const email = (data.email || '').trim();
         const topic = (data.topic || '').trim();
         const message = (data.message || '').trim();
+        const currentLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
+        const messages = UI_TEXT[currentLang];
 
         if (!name || !email || !topic || !message) {
-            return toast('Tous les champs sont requis.', 'error');
+            return toast(messages['form.required'], 'error');
         }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            return toast('Adresse email invalide.', 'error');
+            return toast(messages['form.invalidEmail'], 'error');
         }
         if (data.access_key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
-            return toast("Erreur de configuration de formulaire", 'error');
+            return toast(messages['form.configError'], 'error');
         }
 
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi…';
+        if (submitLabel) submitLabel.textContent = messages['form.sending'];
 
         try {
             const res = await fetch(form.action, {
@@ -355,16 +449,19 @@ function initContactForm() {
             }
 
             if (res.ok && json.success) {
-                toast('Message envoyé, je vous réponds sous 48 h.', 'success');
+                toast(messages['form.sent'], 'success');
                 form.reset();
             } else {
-                toast(json.message || `L'envoi a échoué (${res.status || 'inconnu'}).`, 'error');
+                toast(json.message || `${messages['form.sendFailed']} (${res.status || messages['form.unknown']}).`, 'error');
             }
         } catch {
-            toast('Connexion impossible. Vérifiez votre réseau.', 'error');
+            toast(messages['form.connectionError'], 'error');
         } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = originalLabel;
+            if (submitLabel) {
+                const lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
+                submitLabel.textContent = lang === 'en' ? I18N.en['form.send'] : 'Envoyer';
+            }
         }
     });
 }

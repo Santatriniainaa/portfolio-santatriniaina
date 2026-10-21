@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Document identity & SEO -->
-    <title>RAZAFINDRAKOTO Santatriniaina — Etudiant</title>
-    <meta name="description" content="Portfolio de RAZAFINDRAKOTO Santatriniaina — Etudiant &amp; IoT, Développeur Full Stack et DevOps à Antananarivo, Madagascar.">
+    <title data-i18n="meta.title">RAZAFINDRAKOTO Santatriniaina — Étudiant</title>
+    <meta name="description" content="Portfolio de RAZAFINDRAKOTO Santatriniaina — Étudiant en électronique, développeur Full Stack et IoT à Antananarivo, Madagascar." data-i18n-content="meta.description">
     <meta name="author" content="RAZAFINDRAKOTO Santatriniaina">
 
     <!-- Resource hints — placed before the resources they accelerate -->
@@ -29,18 +29,18 @@
 
     <!-- Open Graph (LinkedIn, Facebook…) -->
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:title" content="RAZAFINDRAKOTO Santatriniaina — Etudiant">
-    <meta property="og:description" content="Electronique">
+    <meta property="og:locale" content="fr_FR" data-i18n-content="meta.locale">
+    <meta property="og:title" content="RAZAFINDRAKOTO Santatriniaina — Étudiant" data-i18n-content="meta.title">
+    <meta property="og:description" content="Étudiant en électronique, développeur Full Stack et IoT à Antananarivo, Madagascar." data-i18n-content="meta.descriptionShort">
     <meta property="og:image" content="assets/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="RAZAFINDRAKOTO Santatriniaina — Etudiant">
+    <meta property="og:image:alt" content="Portrait et portfolio de RAZAFINDRAKOTO Santatriniaina" data-i18n-content="meta.imageAlt">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="RAZAFINDRAKOTO Santatriniaina — Etudiant">
-    <meta name="twitter:description" content="Electronique">
+    <meta name="twitter:title" content="RAZAFINDRAKOTO Santatriniaina — Étudiant" data-i18n-content="meta.title">
+    <meta name="twitter:description" content="Étudiant en électronique, développeur Full Stack et IoT à Antananarivo, Madagascar." data-i18n-content="meta.descriptionShort">
     <meta name="twitter:image" content="assets/images/og-image.png">
 
     <!-- Structured data (Schema.org / Person) -->
@@ -86,7 +86,7 @@
 </head>
 <body>
     <!-- Skip link (a11y) -->
-    <a href="#main" class="skip-link">Aller au contenu</a>
+    <a href="#main" class="skip-link" data-i18n="a11y.skip">Aller au contenu</a>
 
     <!-- Sticky header : brand + nav + language/theme/menu toggles -->
     <header class="site-header">
@@ -96,7 +96,7 @@
                 <span class="brand-name">Santatriniaina</span>
             </a>
 
-            <nav class="nav-links" aria-label="Navigation principale">
+            <nav class="nav-links" aria-label="Navigation principale" data-i18n-aria-label="a11y.primaryNav">
                 <a href="#apropos" data-i18n="nav.about">À propos</a>
                 <a href="#stack" data-i18n="nav.stack">Stack</a>
                 <a href="#projets" data-i18n="nav.projects">Projets</a>
@@ -106,14 +106,14 @@
             </nav>
 
             <div class="nav-actions">
-                <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Changer de langue" aria-pressed="false">
+                <button id="lang-toggle" class="icon-btn lang-btn" type="button" aria-label="Changer de langue" data-i18n-aria-label="a11y.changeLanguage" aria-pressed="false">
                     <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12 15.3 15.3 0 0 1 12 2z"/></svg>
                     <span class="lang-label">FR</span>
                 </button>
-                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème">
+                <button id="theme-toggle" class="icon-btn" type="button" aria-label="Changer de thème" data-i18n-aria-label="a11y.changeTheme">
                     <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
-                <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+                <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="Ouvrir le menu" data-i18n-aria-label="a11y.openMenu" aria-expanded="false">
                     <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
                 </button>
             </div>
@@ -126,10 +126,10 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <p class="eyebrow" data-i18n="hero.eyebrow">Disponible | Antananarivo, Madagascar</p>
+                        <p class="eyebrow" data-i18n="hero.eyebrow">Antananarivo · Madagascar</p>
                         <h2>RAZAFINDRAKOTO <span class="hero-firstname">Santatriniaina</span></h2>
-                        <p class="hero-role" data-i18n="hero.role">Etudiant<span class="hero-role-sep">·</span> IoT <span class="hero-role-sep">·</span> DevOps</p>
-                        <p class="lede" data-i18n="hero.lede">Je conçois des applications web, mobiles et des solutions connectées alliant performance, qualité et expérience utilisateur. J’accorde une attention particulière à l’architecture logicielle, à la maintenabilité du code et à l’innovation technologique.</p>
+                        <p class="hero-role" data-i18n="hero.role">Étudiant en électronique · Développeur Full Stack</p>
+                        <p class="lede" data-i18n="hero.lede">Je conçois des applications et des solutions connectées en associant électronique, développement logiciel et technologies IoT. Je m’intéresse aussi à l’automatisation et au déploiement avec Linux et DevOps.</p>
 
                         <div class="hero-actions">
                             <a href="assets/RAZAFINDRAKOTOSantatriniaina-portfolio-cv.pdf" class="btn btn-primary" download>
@@ -141,36 +141,24 @@
                     </div>
 
                     <figure class="hero-portrait">
-                        <picture>
-                            <source
-                                type="image/webp"
-                                srcset="assets/images/profil-400.webp 400w, assets/images/profil-800.webp 800w"
-                                sizes="(max-width: 860px) 320px, 400px">
-                            <source
-                                type="image/jpeg"
-                                srcset="assets/images/profil-400.jpg 400w, assets/images/profil-800.jpg 800w"
-                                sizes="(max-width: 860px) 320px, 400px">
-                            <img
-                                src="assets/images/profil-800.jpg"
-                                srcset="assets/images/profil-400.jpg 400w, assets/images/profil-800.jpg 800w"
-                                sizes="(max-width: 860px) 320px, 400px"
-                                alt="Portrait de RAZAFINDRAKOTO Santatriniaina"
-                                width="800" height="800"
-                                loading="eager"
-                                fetchpriority="high"
-                                decoding="async">
-                        </picture>
+                        <img
+                            src="assets/images/profil.png"
+                            alt="Portrait de RAZAFINDRAKOTO Santatriniaina" data-i18n-alt="a11y.portraitAlt"
+                            width="200" height="200"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async">
                     </figure>
                 </div>
 
                 <dl class="hero-facts">
                     <div><dt data-i18n="hero.fact.education">Formation</dt><dd data-i18n="hero.fact.educationValue">Master II Électronique ESPA · en cours</dd></div>
-                    <div><dt data-i18n="hero.fact.specialties">Spécialités</dt><dd data-i18n="hero.fact.specialtiesValue">Developpeur · IoT · DevOps</dd></div>
+                    <div><dt data-i18n="hero.fact.specialties">Spécialités</dt><dd data-i18n="hero.fact.specialtiesValue">Full Stack · IoT · DevOps</dd></div>
                     <div><dt data-i18n="hero.fact.certs">Certifications</dt><dd data-i18n="hero.fact.certsValue">Linux Professional Institut · CODEKO</dd></div>
                 </dl>
             </div>
 
-            <a href="#apropos" class="scroll-cue" aria-label="Défiler vers la suite">
+            <a href="#apropos" class="scroll-cue" aria-label="Défiler vers la suite" data-i18n-aria-label="a11y.scrollCue">
                 <span class="scroll-cue-label" data-i18n="hero.scroll">Défiler</span>
                 <span class="scroll-cue-arrow" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg>
@@ -274,7 +262,7 @@
                         <ul class="tag-list">
                             <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original.svg" />Arduino</li>
                             <li><i data-lucide="cpu" aria-hidden="true"></i>ESP32</li>
-                            <li><i data-lucide="circuit-board" aria-hidden="true"></i>Capteur</li>
+                            <li><i data-lucide="circuit-board" aria-hidden="true"></i><span data-i18n="stack.sensor">Capteur</span></li>
                             <li><i data-lucide="layout-grid" aria-hidden="true"></i>KiCad</li>
                             <li><i data-lucide="activity" aria-hidden="true"></i>Proteus</li>
                         </ul>
@@ -290,7 +278,7 @@
                     <article class="stack-group">
                         <h3 data-i18n="stack.other">Autres</h3>
                         <ul class="tag-list">
-                            <li><i data-lucide="refresh-cw" aria-hidden="true"></i>Méthodes Agile (Scrum, Kanban)</li>
+                            <li><i data-lucide="refresh-cw" aria-hidden="true"></i><span data-i18n="stack.agile">Méthodes Agile (Scrum, Kanban)</span></li>
                             <li><i data-lucide="arrow-left-right" aria-hidden="true"></i>API REST</li>
                             <li><i data-lucide="mail" aria-hidden="true"></i>SMTP</li>
                             <li><i data-lucide="palette" aria-hidden="true"></i>UX/UI</li>
@@ -336,7 +324,7 @@
                         <li class="timeline-item">
                             <div class="timeline-meta">
                                 <span class="timeline-date" data-i18n="edu.master.date">2024 — aujourd'hui (en cours)</span>
-                                <span class="timeline-kind">Bac+5</span>
+                                <span class="timeline-kind" data-i18n="edu.master.level">Bac+5</span>
                             </div>
                             <div class="timeline-body">
                                 <h4 data-i18n="edu.master.title">Master en Électronique</h4>
@@ -348,7 +336,7 @@
                         <li class="timeline-item">
                             <div class="timeline-meta">
                                 <span class="timeline-date">2021 — 2024</span>
-                                <span class="timeline-kind">Bac+3</span>
+                                <span class="timeline-kind" data-i18n="edu.licence.level">Bac+3</span>
                             </div>
                             <div class="timeline-body">
                                 <h4 data-i18n="edu.licence.title">Licence en Électronique</h4>
@@ -360,7 +348,7 @@
                         <li class="timeline-item">
                             <div class="timeline-meta">
                                 <span class="timeline-date">2017 — 2018</span>
-                                <span class="timeline-kind">Bac</span>
+                                <span class="timeline-kind" data-i18n="edu.bac.level">Bac</span>
                             </div>
                             <div class="timeline-body">
                                 <h4 data-i18n="edu.bac.title">Baccalauréat Série C</h4>
@@ -380,12 +368,12 @@
                     <div class="cert-grid">
                         <article class="cert-card">
                             <div class="cert-card-head">
-                                <span class="cert-status cert-status--progress">En cours</span>
+                                <span class="cert-status cert-status--progress" data-i18n="cert.status.progress">En cours</span>
                                 <i data-lucide="terminal" class="cert-icon" aria-hidden="true"></i>
                             </div>
                             <h4>Linux Essentials</h4>
                             <p class="cert-org">Linux Professional Institut</p>
-                            <p class="cert-desc">Fondamentaux Linux : ligne de commande, gestion des utilisateurs, fichiers, processus et services.</p>
+                            <p class="cert-desc" data-i18n="cert.linux.desc">Apprentissage des bases de Linux : commandes essentielles, navigation dans le système de fichiers, gestion des utilisateurs et suivi des processus et services.</p>
                             <ul class="tag-list cert-tags">
                                 <li>LPI</li>
                                 <li>Linux</li>
@@ -395,12 +383,12 @@
 
                         <article class="cert-card">
                             <div class="cert-card-head">
-                                <span class="cert-status cert-status--done">Certifié</span>
+                                <span class="cert-status cert-status--done" data-i18n="cert.status.done">Certifié</span>
                                 <i data-lucide="cloud" class="cert-icon" aria-hidden="true"></i>
                             </div>
                             <h4>Architecture Cloud &amp; DevOps</h4>
                             <p class="cert-org">CODEKO</p>
-                            <p class="cert-desc">Pipelines CI/CD, conteneurisation, déploiement cloud et automatisation d'infrastructures.</p>
+                            <p class="cert-desc" data-i18n="cert.cloud.desc">Découverte des pratiques Cloud et DevOps : automatisation des déploiements, pipelines CI/CD, conteneurisation et gestion d’infrastructures modernes.</p>
                             <ul class="tag-list cert-tags">
                                 <li>Cloud</li>
                                 <li>DevOps</li>
@@ -410,12 +398,12 @@
 
                         <article class="cert-card">
                             <div class="cert-card-head">
-                                <span class="cert-status cert-status--self">Autodidacte</span>
+                                <span class="cert-status cert-status--self" data-i18n="cert.status.self">Autodidacte</span>
                                 <i data-lucide="leaf" class="cert-icon" aria-hidden="true"></i>
                             </div>
                             <h4>Spring Boot</h4>
-                            <p class="cert-org">Apprentissage autodidacte</p>
-                            <p class="cert-desc">APIs Java REST, JPA / Hibernate, sécurité, tests et architecture microservices.</p>
+                            <p class="cert-org" data-i18n="cert.self.org">Apprentissage autodidacte</p>
+                            <p class="cert-desc" data-i18n="cert.spring.desc">Développement d’API REST avec Spring Boot, de la persistance des données avec JPA / Hibernate aux tests, à la sécurité et à la structuration du code.</p>
                             <ul class="tag-list cert-tags">
                                 <li>Java</li>
                                 <li>Spring Boot</li>
@@ -438,33 +426,33 @@
                     <article class="service-card">
                         <span class="service-num">01</span>
                         <h3 data-i18n="services.fullstack">Développement</h3>
-                        <p data-i18n="services.fullstackDesc">Conception et développement d'applications.</p>
+                        <p data-i18n="services.fullstackDesc">Conception de sites et d’applications web, avec interfaces adaptatives, fonctionnalités utiles et code maintenable, selon vos besoins réels.</p>
                         <ul>
-                            <li>UX/UI Angular &amp; JavaFX</li>
-                            <li>APIs REST Spring Boot / FastAPI</li>
-                            <li>Données PostgreSQL / JSON</li>
+                            <li data-i18n="services.fullstack.item1">UX/UI Angular &amp; JavaFX</li>
+                            <li data-i18n="services.fullstack.item2">APIs REST Spring Boot / FastAPI</li>
+                            <li data-i18n="services.fullstack.item3">Données PostgreSQL / JSON</li>
                         </ul>
                     </article>
 
                     <article class="service-card">
                         <span class="service-num">02</span>
                         <h3 data-i18n="services.iot">IoT &amp; Systèmes Embarqués</h3>
-                        <p data-i18n="services.iotDesc">Solutions connectées : prototypage électronique, programmation de microcontrôleurs et intégration cloud.</p>
+                        <p data-i18n="services.iotDesc">Développement de solutions connectées, du prototypage électronique à la programmation des microcontrôleurs et à l’intégration cloud sécurisée.</p>
                         <ul>
-                            <li>Arduino, ESP32</li>
-                            <li>Capteurs, MQTT, WiFi </li>
-                            <li>Tableaux de bord IoT &amp; cloud</li>
+                            <li data-i18n="services.iot.item1">Arduino, ESP32</li>
+                            <li data-i18n="services.iot.item2">Capteurs, MQTT, WiFi</li>
+                            <li data-i18n="services.iot.item3">Tableaux de bord IoT &amp; cloud</li>
                         </ul>
                     </article>
 
                     <article class="service-card">
                         <span class="service-num">03</span>
-                        <h3 data-i18n="services.devops">Cloud &amp; DevOps</h3>
-                        <p data-i18n="services.devopsDesc">Mise en place de pipelines CI/CD, conteneurisation et déploiement d'infrastructures fiables et automatisées.</p>
+                        <h3 data-i18n="services.devops">Architecture Cloud &amp; DevOps</h3>
+                        <p data-i18n="services.devopsDesc">Automatisation des applications avec pipelines CI/CD, conteneurs et déploiement d’infrastructures Linux fiables, évolutives et faciles à maintenir.</p>
                         <ul>
-                            <li>Docker &amp; conteneurisation</li>
-                            <li>CI/CD avec GitLab / GitHub</li>
-                            <li>Administration Linux </li>
+                            <li data-i18n="services.devops.item1">Docker &amp; conteneurisation</li>
+                            <li data-i18n="services.devops.item2">CI/CD avec GitLab / GitHub</li>
+                            <li data-i18n="services.devops.item3">Administration Linux</li>
                         </ul>
                     </article>
                 </div>
@@ -583,7 +571,7 @@
     </main>
 
     <!-- Floating UI : back-to-top (visible past 400px of scroll) -->
-    <a href="#accueil" class="back-to-top" aria-label="Retour en haut">
+    <a href="#accueil" class="back-to-top" aria-label="Retour en haut" data-i18n-aria-label="a11y.backToTop">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
     </a>
 
@@ -596,7 +584,7 @@
                         <span class="brand-mark">R</span>
                         <span class="brand-name">Santatriniaina</span>
                     </a>
-                    <p class="muted" data-i18n="footer.role">Etudiant</p>
+                    <p class="muted" data-i18n="footer.role">Étudiant en électronique &amp; développeur Full Stack · IoT · DevOps</p>
                     <p class="footer-location">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                         <span data-i18n="footer.location">Antananarivo, Madagascar</span>
@@ -646,7 +634,7 @@
     </footer>
 
     <!-- Mobile sticky bar : quick WhatsApp + Email actions -->
-    <div class="mobile-cta" role="navigation" aria-label="Contact rapide">
+    <div class="mobile-cta" role="navigation" aria-label="Contact rapide" data-i18n-aria-label="a11y.quickContact">
         <a class="mobile-cta-btn mobile-cta-whatsapp" href="https://wa.me/261346395306" target="_blank" rel="noopener">
             <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.465 3.488"/></svg>
             <span>WhatsApp</span>
