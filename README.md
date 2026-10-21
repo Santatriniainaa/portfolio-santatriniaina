@@ -14,8 +14,6 @@
 
 Actuellement en fin de **Master II en Électronique** à l’École Supérieure Polytechnique d’Antananarivo, après y avoir obtenu une Licence en Électronique, je travaille à l’intersection du matériel embarqué et des plateformes logicielles modernes.
 
-Je conçois des solutions complètes : du prototype électronique (ESP32, capteurs, MQTT) au backend Java Spring Boot / Python FastAPI, en passant par l'interface Angular et le déploiement Docker / Linux.
-
 ---
 
 ## Stack technique
