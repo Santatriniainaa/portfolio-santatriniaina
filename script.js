@@ -42,7 +42,7 @@ const I18N = {
         'hero.fact.education': 'Education',
         'hero.fact.educationValue': 'Master II in Electronics — ESPA · in progress',
         'hero.fact.specialties': 'Expertise',
-        'hero.fact.specialtiesValue': 'Full Stack · IoT · DevOps',
+        'hero.fact.specialtiesValue': 'Electronics · Computer Science',
         'hero.fact.certs': 'Certifications',
         'hero.fact.certsValue': 'Linux Professional Institute · CODEKO',
         'hero.scroll': 'Scroll',
