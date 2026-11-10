@@ -1,6 +1,8 @@
+(() => {
+    'use strict';
+
 /* ====================  CONSTANTS  ==================== */
 
-/* ------------  Inline SVG icons for critical nav buttons  ------------ */
 const INLINE_ICONS = {
     moon: '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
     sun:  '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>',
@@ -8,12 +10,14 @@ const INLINE_ICONS = {
     x:    '<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>',
 };
 
-/* ------------  i18n dictionary (FR is the source, EN is the translation)  ------------ */
+const I18N_ATTRIBUTES = ['content', 'aria-label', 'alt', 'value', 'href'];
+const I18N_ATTRIBUTE_SELECTOR = I18N_ATTRIBUTES.map((attribute) => `[data-i18n-${attribute}]`).join(', ');
+
 const I18N = {
     en: {
-        'meta.title': 'RAZAFINDRAKOTO Santatriniaina — Student',
-        'meta.description': 'Portfolio of RAZAFINDRAKOTO Santatriniaina — Electronics student, Full Stack developer and IoT enthusiast in Antananarivo, Madagascar.',
-        'meta.descriptionShort': 'Electronics student, Full Stack developer and IoT enthusiast in Antananarivo, Madagascar.',
+        'meta.title': 'RAZAFINDRAKOTO Santatriniaina — Electronics Student',
+        'meta.description': 'Portfolio of RAZAFINDRAKOTO Santatriniaina — Electronics student focused on embedded systems, IoT, robotics, Full Stack development, Cloud Architecture, and DevOps in Antananarivo, Madagascar.',
+        'meta.descriptionShort': 'Electronics student focused on embedded systems, IoT, robotics, Full Stack development, Cloud Architecture, and DevOps in Antananarivo, Madagascar.',
         'meta.imageAlt': 'Portrait and portfolio of RAZAFINDRAKOTO Santatriniaina',
         'meta.locale': 'en_US',
         'a11y.skip': 'Skip to content',
@@ -35,16 +39,16 @@ const I18N = {
         'nav.contact': 'Contact',
 
         'hero.eyebrow': 'Antananarivo · Madagascar',
-        'hero.role': 'Electronics student · Full Stack Developer',
-        'hero.lede': 'I build applications and connected solutions by combining electronics, software development, and IoT technologies. I am also interested in automation and deployment with Linux and DevOps.',
+        'hero.role': 'Electronics student · Connected technology enthusiast',
+        'hero.lede': 'I design and develop applications and connected solutions by combining electronics, embedded systems, and IoT.',
         'hero.downloadCv': 'Download CV',
         'hero.contactMe': 'Contact me',
         'hero.fact.education': 'Education',
         'hero.fact.educationValue': 'Master II in Electronics — ESPA · in progress',
         'hero.fact.specialties': 'Expertise',
         'hero.fact.specialtiesValue': 'Electronics · Computer Science',
-        'hero.fact.certs': 'Certifications',
-        'hero.fact.certsValue': 'Linux Professional Institute · CODEKO',
+        'hero.fact.certs': 'Training',
+        'hero.fact.certsValue': 'Linux Essentials · Cloud & DevOps',
         'hero.scroll': 'Scroll',
 
         'about.label': '01 — About',
@@ -54,7 +58,7 @@ const I18N = {
         'about.location': 'Location',
         'about.locationValue': 'Antananarivo, Madagascar',
         'about.availability': 'Availability',
-        'about.availabilityValue': 'Internship',
+        'about.availabilityValue': 'Internships & project work',
         'about.languages': 'Languages',
         'about.languagesValue': 'Malagasy · French · English',
 
@@ -62,6 +66,11 @@ const I18N = {
         'stack.title': 'Tools and technologies I use every day.',
         'stack.language': 'Languages',
         'stack.framework': 'Frameworks',
+        'stack.architecture': 'Software architecture',
+        'stack.architecture.hexagonal': 'Hexagonal',
+        'stack.architecture.microservices': 'Microservices',
+        'stack.architecture.modular': 'Modular',
+        'stack.architecture.layered': 'Layered',
         'stack.gbdd': 'Database management',
         'stack.devtools': 'Development tools',
         'stack.manage': 'Project management',
@@ -74,7 +83,7 @@ const I18N = {
 
         'projects.label': '03 — Projects',
         'projects.title': 'Selected work.',
-        'projects.empty': 'This section will soon feature concrete projects: context, problem solved, technologies used, results, and GitHub links.',
+        'projects.empty': 'Explore my completed projects on GitHub, including their source code and the technologies used.',
         'projects.cta': 'See my GitHub repositories',
 
         'education.label': '04 — Background & certifications',
@@ -104,32 +113,33 @@ const I18N = {
 
         'services.label': '05 — Services',
         'services.title': 'What I can build for you.',
-        'services.fullstack': 'Development',
-        'services.fullstackDesc': 'Designing websites and web applications with responsive interfaces, useful features, and maintainable code tailored to your specific needs.',
-        'services.fullstack.item1': 'UX/UI with Angular & JavaFX',
-        'services.fullstack.item2': 'REST APIs with Spring Boot / FastAPI',
-        'services.fullstack.item3': 'Data with PostgreSQL / JSON',
+        'services.fullstack': 'Web & desktop applications',
+        'services.fullstackDesc': 'Building web or desktop interfaces and applications, with data management and service integrations tailored to each project.',
+        'services.fullstack.item1': 'Interfaces: Angular / JavaFX',
+        'services.fullstack.item2': 'REST APIs: Spring Boot / FastAPI',
+        'services.fullstack.item3': 'Databases: PostgreSQL / MySQL',
         'services.iot': 'IoT & Embedded Systems',
-        'services.iotDesc': 'Development of connected solutions, from electronic prototyping to programming microcontrollers and secure integration with reliable cloud platforms.',
+        'services.iotDesc': 'Developing connected solutions, from electronic prototyping and microcontroller programming to secure cloud integration.',
         'services.iot.item1': 'Arduino, ESP32',
-        'services.iot.item2': 'Sensors, MQTT, Wi-Fi',
-        'services.iot.item3': 'IoT & cloud dashboards',
-        'services.devops': 'Architect Cloud & DevOps',
-        'services.devopsDesc': 'Automated application delivery using CI/CD pipelines, containers, and reliable, scalable Linux infrastructure that is easy to maintain.',
+        'services.iot.item2': 'Sensors and communication',
+        'services.iot.item3': 'Visualization on an IoT dashboard',
+        'services.devops': 'Cloud Architecture & DevOps',
+        'services.devopsDesc': 'Automating applications with CI/CD pipelines, containers, and deployment of reliable, scalable, easy-to-maintain infrastructure.',
         'services.devops.item1': 'Docker & containerization',
         'services.devops.item2': 'CI/CD with GitLab / GitHub',
-        'services.devops.item3': 'Linux administration',
+        'services.devops.item3': 'Configuration and deployment',
 
         'contact.label': '06 — Contact',
         'contact.title': "Let's discuss your project.",
-        'contact.intro': 'Available for projects.',
+        'contact.intro': 'Open to internship and project opportunities.',
         'contact.email': 'Email',
+        'contact.emailHref': 'mailto:santatriniainaraz080@gmail.com?subject=Portfolio%20contact%20request',
         'contact.location': 'Location',
         'contact.locationValue': 'Antananarivo, Madagascar',
-        'contact.available': 'Available for new projects',
+        'contact.available': 'Available for internships and project work',
         'contact.responseTime': 'Response within 48 business hours',
-        'contact.socials': 'On the web',
         'form.title': 'Send a message',
+        'form.emailSubject': 'New message from the portfolio',
         'form.name': 'Name',
         'form.email': 'Email',
         'form.subject': 'Subject',
@@ -137,7 +147,7 @@ const I18N = {
         'form.send': 'Send',
         'form.note': 'Your data remains confidential and will never be shared.',
 
-        'footer.role': 'Electronics engineer & Full Stack developer · IoT · DevOps',
+        'footer.role': 'Electronics student & Full Stack developer · IoT · DevOps',
         'footer.location': 'Antananarivo, Madagascar',
         'footer.nav': 'Navigation',
         'footer.reach': 'Get in touch',
@@ -150,21 +160,27 @@ const I18N = {
 
 const UI_TEXT = {
     fr: {
+        'menu.open': 'Ouvrir le menu',
+        'menu.close': 'Fermer le menu',
         'form.required': 'Tous les champs sont requis.',
         'form.invalidEmail': 'Adresse email invalide.',
         'form.configError': 'Erreur de configuration du formulaire.',
+        'form.send': 'Envoyer',
         'form.sending': 'Envoi…',
-        'form.sent': 'Message envoyé, je vous réponds sous 48 h.',
+        'form.sent': 'Message envoyé, je vous réponds sous 48 h ouvrées.',
         'form.sendFailed': 'L’envoi a échoué',
         'form.unknown': 'inconnu',
         'form.connectionError': 'Connexion impossible. Vérifiez votre réseau.',
     },
     en: {
+        'menu.open': 'Open menu',
+        'menu.close': 'Close menu',
         'form.required': 'All fields are required.',
         'form.invalidEmail': 'Please enter a valid email address.',
         'form.configError': 'Form configuration error.',
+        'form.send': 'Send',
         'form.sending': 'Sending…',
-        'form.sent': 'Message sent. I’ll get back to you within 48 hours.',
+        'form.sent': 'Message sent. I’ll get back to you within 48 business hours.',
         'form.sendFailed': 'Message could not be sent',
         'form.unknown': 'unknown',
         'form.connectionError': 'Unable to connect. Please check your network.',
@@ -191,9 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ------------  Replace <i data-lucide="..."> with SVGs from Lucide  ------------ */
 function renderIcons(root = document) {
-    if (typeof window.lucide === 'undefined') {
-        return window.setTimeout(() => renderIcons(root), 50);
-    }
+    if (typeof window.lucide?.createIcons !== 'function') return;
     window.lucide.createIcons({
         nameAttr: 'data-lucide',
         attrs: { 'stroke-width': '1.75' },
@@ -206,15 +220,17 @@ function initTheme() {
     const root = document.documentElement;
     if (!root) return;
 
-    const stored = localStorage.getItem('theme');
+    const stored = getPreference('theme');
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const systemDark = mediaQuery.matches;
-    const initial = stored || (systemDark ? 'dark' : 'light');
+    const initial = stored === 'dark' || stored === 'light'
+        ? stored
+        : (systemDark ? 'dark' : 'light');
     applyTheme(initial);
 
     btn?.addEventListener('click', (e) => {
         const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', next);
+        setPreference('theme', next);
 
         if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             applyTheme(next);
@@ -244,7 +260,7 @@ function initTheme() {
     });
 
     mediaQuery.addEventListener?.('change', (e) => {
-        if (!localStorage.getItem('theme')) applyTheme(e.matches ? 'dark' : 'light');
+        if (!['dark', 'light'].includes(getPreference('theme'))) applyTheme(e.matches ? 'dark' : 'light');
     });
 
     function applyTheme(theme) {
@@ -261,21 +277,21 @@ function initLanguage() {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
         el.dataset.i18nFr = el.textContent.trim();
     });
-    document.querySelectorAll('[data-i18n-content], [data-i18n-aria-label], [data-i18n-alt]').forEach((el) => {
-        ['content', 'aria-label', 'alt'].forEach((attribute) => {
-            const key = el.dataset[`i18n${attribute[0].toUpperCase()}${attribute.slice(1)}`];
-            if (key) el.dataset[`i18n${attribute[0].toUpperCase()}${attribute.slice(1)}Fr`] = el.getAttribute(attribute);
+    document.querySelectorAll(I18N_ATTRIBUTE_SELECTOR).forEach((el) => {
+        I18N_ATTRIBUTES.forEach((attribute) => {
+            const key = el.getAttribute(`data-i18n-${attribute}`);
+            if (key) el.setAttribute(`data-i18n-${attribute}-fr`, el.getAttribute(attribute));
         });
     });
 
-    const stored = localStorage.getItem('lang');
+    const stored = getPreference('lang');
     const initial = stored === 'en' ? 'en' : 'fr';
     applyLang(initial);
 
     btn?.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('lang') || 'fr';
         const next = current === 'fr' ? 'en' : 'fr';
-        localStorage.setItem('lang', next);
+        setPreference('lang', next);
         applyLang(next);
     });
 
@@ -288,24 +304,21 @@ function initLanguage() {
                 : (I18N.en[key] || el.dataset.i18nFr);
             if (translation) el.textContent = translation;
         });
-        document.querySelectorAll('[data-i18n-content], [data-i18n-aria-label], [data-i18n-alt]').forEach((el) => {
-            ['content', 'aria-label', 'alt'].forEach((attribute) => {
-                const suffix = attribute[0].toUpperCase() + attribute.slice(1);
-                const key = el.dataset[`i18n${suffix}`];
+        document.querySelectorAll(I18N_ATTRIBUTE_SELECTOR).forEach((el) => {
+            I18N_ATTRIBUTES.forEach((attribute) => {
+                const key = el.getAttribute(`data-i18n-${attribute}`);
                 if (!key) return;
+                const frenchValue = el.getAttribute(`data-i18n-${attribute}-fr`);
                 const translation = lang === 'fr'
-                    ? el.dataset[`i18n${suffix}Fr`]
-                    : I18N.en[key] || el.dataset[`i18n${suffix}Fr`];
+                    ? frenchValue
+                    : I18N.en[key] || frenchValue;
                 if (translation) el.setAttribute(attribute, translation);
             });
         });
         const navToggle = document.getElementById('nav-toggle');
         const menuIsOpen = document.querySelector('.nav-links')?.classList.contains('open');
         if (navToggle) {
-            const menuLabel = menuIsOpen ? 'a11y.closeMenu' : 'a11y.openMenu';
-            navToggle.setAttribute('aria-label', lang === 'en'
-                ? I18N.en[menuLabel]
-                : (menuIsOpen ? 'Fermer le menu' : 'Ouvrir le menu'));
+            navToggle.setAttribute('aria-label', UI_TEXT[lang][menuIsOpen ? 'menu.close' : 'menu.open']);
         }
         if (label) label.textContent = lang === 'fr' ? 'FR' : 'EN';
         if (btn) btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
@@ -321,10 +334,8 @@ function initNav() {
     toggle.addEventListener('click', () => {
         const open = links.classList.toggle('open');
         toggle.setAttribute('aria-expanded', String(open));
-        const lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
-        toggle.setAttribute('aria-label', open
-            ? (lang === 'en' ? I18N.en['a11y.closeMenu'] : 'Fermer le menu')
-            : (lang === 'en' ? I18N.en['a11y.openMenu'] : 'Ouvrir le menu'));
+        const lang = getCurrentLanguage();
+        toggle.setAttribute('aria-label', UI_TEXT[lang][open ? 'menu.close' : 'menu.open']);
         swapIcon(toggle, open ? 'x' : 'menu');
     });
 
@@ -333,8 +344,8 @@ function initNav() {
             if (links.classList.contains('open')) {
                 links.classList.remove('open');
                 toggle.setAttribute('aria-expanded', 'false');
-                const lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
-                toggle.setAttribute('aria-label', lang === 'en' ? I18N.en['a11y.openMenu'] : 'Ouvrir le menu');
+                const lang = getCurrentLanguage();
+                toggle.setAttribute('aria-label', UI_TEXT[lang]['menu.open']);
                 swapIcon(toggle, 'menu');
             }
         });
@@ -369,7 +380,7 @@ function initReveal() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const targets = document.querySelectorAll(
-        '.section-head, .stack-group, .service-card, .cert-card, .timeline-item, .projects-empty, .contact-form, .contact-list'
+        '.section-head, .stack-group, .service-card, .cert-card, .timeline-item, .projects-empty, .contact-form'
     );
     targets.forEach((el) => el.classList.add('reveal'));
 
@@ -417,7 +428,7 @@ function initContactForm() {
         const email = (data.email || '').trim();
         const topic = (data.topic || '').trim();
         const message = (data.message || '').trim();
-        const currentLang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
+        const currentLang = getCurrentLanguage();
         const messages = UI_TEXT[currentLang];
 
         if (!name || !email || !topic || !message) {
@@ -459,8 +470,8 @@ function initContactForm() {
         } finally {
             submitBtn.disabled = false;
             if (submitLabel) {
-                const lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
-                submitLabel.textContent = lang === 'en' ? I18N.en['form.send'] : 'Envoyer';
+                const lang = getCurrentLanguage();
+                submitLabel.textContent = UI_TEXT[lang]['form.send'];
             }
         }
     });
@@ -534,6 +545,27 @@ function initHeroScroll() {
 
 /* ====================  HELPERS  ==================== */
 
+function getCurrentLanguage() {
+    return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'fr';
+}
+
+function getPreference(key) {
+    try {
+        return window.localStorage.getItem(key);
+    } catch {
+        return null;
+    }
+}
+
+function setPreference(key, value) {
+    try {
+        window.localStorage.setItem(key, value);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
 /* ------------  Swap an icon inside a container (inline SVG or Lucide name)  ------------ */
 function swapIcon(container, name) {
     if (INLINE_ICONS[name]) {
@@ -557,3 +589,4 @@ function toast(message, variant = 'success') {
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 4000);
 }
+})();
