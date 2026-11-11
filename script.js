@@ -77,6 +77,7 @@ const I18N = {
         'stack.manage': 'Project management & collaboration',
         'stack.design': 'Design',
         'stack.electronics': 'Electronics & IoT',
+        'stack.robotics': 'Robotics',
         'stack.ai': 'Artificial Intelligence',
         'stack.other': 'Other tools',
         'stack.sensor': 'Sensor',
